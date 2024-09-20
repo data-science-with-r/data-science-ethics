@@ -41,11 +41,23 @@ options("readr.edition" = 1)
 
 <!-- end: webr fodder -->
 
+```{webr}
+#| label: load-data
+kansas_covid <- read_csv("kansas_covid.csv")
+```
+
+```{r}
+#| label: r-data
+#| echo: false
+#| message: false
+kansas_covid <- read_csv("exercises/data/kansas_covid.csv")
+```
+
 
 ```{webr}
 #| setup: true
 #| exercise: ex_1
-kansas_covid <- read_csv("data/kansas_covid.csv")
+kansas_covid <- read_csv("kansas_covid.csv")
 ```
 
 ## Motivation
@@ -58,7 +70,7 @@ In this programming exercise, we are going to visit data from the Covid-19 pande
 
 *"On August 6, 2020, Rachel Maddow of MSNBC tweeted “Chart: Kansas mask counties versus no-mask mandate counties” (Maddow 2020, August 6) along with a link to a plot (see figure below) created by the Kansas Department of Health and Environment—which was also shared live on The Rachel Maddow Show that same day. The plot compared the number of COVID-19 cases over time for counties in Kansas that had mask mandates versus those that did not"* [@engledowl2021]
 
-![](images/masks-v-nomasks.png)
+![](exercises/images/masks-v-nomasks.png)
 
 What is misleading about this graph?
 
@@ -71,6 +83,7 @@ demo
 :::
 
 ```{r}
+#| eval: true
 kansas_covid |>
   pivot_longer(!date, names_to = "County" , values_to = "cases") |>
   mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
