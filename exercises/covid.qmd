@@ -1,8 +1,17 @@
 ---
-title: "Misleading Data Visualizations"
-webr:
-  packages: ['tidyverse']
+title: Misleading Data Visualizations
+format: live-html
+engine: knitr
 bibliography: reference.bib
+webr:
+  packages: 
+    - tidyverse
+    - scales
+  cell-options:
+    autorun: false
+  resources:
+    - https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/kansas_covid.csv
+    - https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/georgia_covid.csv
 ---
 
 Programming exercises are designed to provide an opportunity for you to put what you learn in the videos and readings.
@@ -19,23 +28,23 @@ When the WEBR STATUS says "Ready!", you can interact with the code chunks!
 library(tidyverse)
 ```
 
+<!-- begin: webr fodder -->
 
-```{webr-r}
-#| context: setup
-download.file(
-  "https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/kansas_covid.csv",
-  "kansas15_covid.csv"
-)
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-options(readr.show_progress = FALSE)
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options("readr.edition" = 1)
 ```
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-georgia_covid <- read_csv("data/georgia_covid.csv") # put in R file to r chunks have data to use
+<!-- end: webr fodder -->
 
+
+```{webr}
+#| setup: true
+#| exercise: ex_1
 kansas_covid <- read_csv("data/kansas_covid.csv")
 ```
 
@@ -57,6 +66,7 @@ What is misleading about this graph?
 ::: {.callout-tip collapse="true"}
 ## Solution
 
+demo
 
 :::
 
@@ -76,3 +86,9 @@ kansas_covid |>
   theme(legend.position = "bottom")
 ```
 
+```{webr}
+#| exercise: ex_1
+___
+```
+
+## Georgia Covid
