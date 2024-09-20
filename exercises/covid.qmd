@@ -1,0 +1,78 @@
+---
+title: "Misleading Data Visualizations"
+webr:
+  packages: ['tidyverse']
+bibliography: reference.bib
+---
+
+Programming exercises are designed to provide an opportunity for you to put what you learn in the videos and readings.
+These exercises feature interactive code chunks using a tool called [WebR](https://docs.r-wasm.org/webr/latest), which allow you to write, edit, and run R code without leaving your browser.
+
+When the WEBR STATUS says "Ready!", you can interact with the code chunks!
+
+## Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+
+```{webr-r}
+#| context: setup
+download.file(
+  "https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/kansas_covid.csv",
+  "kansas15_covid.csv"
+)
+
+options(readr.show_progress = FALSE)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+georgia_covid <- read_csv("data/georgia_covid.csv") # put in R file to r chunks have data to use
+
+kansas_covid <- read_csv("data/kansas_covid.csv")
+```
+
+## Motivation
+
+Data visualization is a powerful tool used to help a general audience synthesize complex data into a message that is understandable. However, data visualizations that are intentionally or unintentionally misleading can lead an audience to conclusions that are nothing more than fabrications of the truth. 
+
+In this programming exercise, we are going to visit data from the Covid-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved.
+
+## Kansas Covid 
+
+*"On August 6, 2020, Rachel Maddow of MSNBC tweeted “Chart: Kansas mask counties versus no-mask mandate counties” (Maddow 2020, August 6) along with a link to a plot (see figure below) created by the Kansas Department of Health and Environment—which was also shared live on The Rachel Maddow Show that same day. The plot compared the number of COVID-19 cases over time for counties in Kansas that had mask mandates versus those that did not"* [@engledowl2021]
+
+![](images/masks-v-nomasks.png)
+
+What is misleading about this graph?
+
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+
+:::
+
+```{r}
+kansas_covid |>
+  pivot_longer(!date, names_to = "County" , values_to = "cases") |>
+  mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
+  ggplot(
+    aes(x = date , y = cases , color = County)
+  ) +
+  geom_line() +
+  geom_point(aes(shape = County)) + 
+  scale_color_manual(values = c("mask mandate" = "#E69F00",
+                                "no-mask mandate" = "#0072B2")) +
+  scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "1 day") + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
+  theme(legend.position = "bottom")
+```
+
