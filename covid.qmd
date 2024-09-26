@@ -41,10 +41,11 @@ options("readr.edition" = 1)
 
 <!-- end: webr fodder -->
 
-```{webr}
-#| label: load-data
-kansas_covid <- read_csv("kansas_covid.csv")
-```
+## Motivation
+
+Data visualization is a powerful tool used to help a general audience synthesize complex data into a message that is understandable. However, data visualizations that are intentionally or unintentionally misleading can lead an audience to conclusions that are nothing more than fabrications of the truth. 
+
+In this programming exercise, we are going to visit data from the Covid-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved.
 
 ```{r}
 #| label: r-data
@@ -60,27 +61,60 @@ kansas_covid <- read_csv("exercises/data/kansas_covid.csv")
 kansas_covid <- read_csv("kansas_covid.csv")
 ```
 
-## Motivation
-
-Data visualization is a powerful tool used to help a general audience synthesize complex data into a message that is understandable. However, data visualizations that are intentionally or unintentionally misleading can lead an audience to conclusions that are nothing more than fabrications of the truth. 
-
-In this programming exercise, we are going to visit data from the Covid-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved.
 
 ## Kansas Covid 
 
 *"On August 6, 2020, Rachel Maddow of MSNBC tweeted “Chart: Kansas mask counties versus no-mask mandate counties” (Maddow 2020, August 6) along with a link to a plot (see figure below) created by the Kansas Department of Health and Environment—which was also shared live on The Rachel Maddow Show that same day. The plot compared the number of COVID-19 cases over time for counties in Kansas that had mask mandates versus those that did not"* [@engledowl2021]
 
+The data used to create the data visualization can be read in and seen below.
+
+```{webr}
+#| label: load-data
+kansas_covid <- read_csv("kansas_covid.csv")
+
+kansas_covid
+```
+
+
 ![](exercises/images/masks-v-nomasks.png)
 
-What is misleading about this graph?
+What is misleading about this graph? Why might it be misleading?
 
 
 ::: {.callout-tip collapse="true"}
 ## Solution
-
-demo
-
+There are two different y-axes. One on the left for the counties with the mask mandate, and one on the right for the counties without a mask mandate. This may be misleading, as someone may not see the additional y-axis on the right side of the graph; line graphs typically do not have two different y-axes. 
 :::
+
+What trend in these data might someone conclude because of the misleading visualization?
+
+::: {.callout-tip collapse="true"}
+## Solution
+Based on the misleading visualization, one could come to the conclusion that, the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased to a lower value for masked counties than for counties that did not have the mask mandate
+:::
+
+## Fixing the graph 
+
+Now that we have identified how this graph is misleading, let's create our own graph that fixes the issue! We are going to use `ggplot()` to make our new graph. Please see the [Function Reference](https://ggplot2.tidyverse.org/reference/) for the different types of `geoms` we can use. Add the appropriate geom to the plot below to make a line graph.
+
+```{webr}
+kansas_covid |>
+  pivot_longer(!date, names_to = "County" , values_to = "cases") |>
+  mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
+  ggplot(
+    aes(x = date , y = cases , color = County)
+  ) +
+  # add code here
+```
+
+Using our new graph, what proper conclusion can we make? 
+
+::: {.callout-tip collapse="true"}
+## Solution
+Based on our new graph, we can see the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased for the mask mandated counties, and stayed relatively consistent for the non-masked mandated counties. We can also see that within this date range, the non-mask mandated counties had a lower rolling average per/100k than masked mandated counties.
+:::
+
+We can add the following lines of code to make the graph even more effective. We are using [`scale_color_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html) to change the colors of the line assocciated with the County variable; [`scale_x_date`](https://ggplot2.tidyverse.org/reference/scale_date.html) to add date labels to the x-axis; [`theme`](https://ggplot2.tidyverse.org/reference/theme.html) to change the angle of the x-axis and the position of the legend; and [`labs`](https://ggplot2.tidyverse.org/reference/labs.html) to add a title!
 
 ```{r}
 #| eval: true
@@ -91,12 +125,12 @@ kansas_covid |>
     aes(x = date , y = cases , color = County)
   ) +
   geom_line() +
-  geom_point(aes(shape = County)) + 
   scale_color_manual(values = c("mask mandate" = "#E69F00",
                                 "no-mask mandate" = "#0072B2")) +
   scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "1 day") + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
-  theme(legend.position = "bottom")
+  theme(axis.text.x = element_text(angle = 60, hjust = 1),
+        legend.position = "bottom") + 
+  labs(title = "Kansas Covid-19 7 day rolling averages per/100k")
 ```
 
 ```{webr}
