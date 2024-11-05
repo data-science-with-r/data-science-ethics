@@ -1,13 +1,53 @@
-Hello, and welcome! My name is Mine Çetinkaya-Rundel, and I will be your instructor for the specialization titled Data Science with R. This is the third course in the series -- Data Science Ethics.
+In this video, we're going to talk about data privacy.
 
->>> In the first course we introduced the data science cycle with this figure from the book R for Data Science.
+So, let's touch on this idea of "your data"
 
->>> In the second course we dove deeper into data data transformation, formally introduced data tidying via reshaping and joining data, and then took one more step back and learned to import datasets from CSV files and Excel spreadsheet as well as scraping unstructured data off the web and reorganizing them into data frames in R.
+>>> Every time we use apps, websites, and devices, our data is being collected and used or sold to others.
 
->>> In this course we'll take a bit of a break from "how to do this task in R" and ask "should we do this task?" Specifically, we'll discuss topics in data science ethics such as
+>>> More importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people.
 
-> misrepresentation of data science results
-> data privacy, and
-> algorithmic bias
+>>> This about what pieces of data have you left on the internet today? Think through everything you've logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it's shared with others? Do you know the answers to all of these questions? If no, are you ok with that?
 
-Let's get started!
+>>> Next, let's think about sharing your data
+
+>>>  What are you OK with sharing?
+
+> Name
+> Age
+> Email
+> Phone Number
+> List of every video you watch
+> List of every video you comment on
+> How you type: speed, accuracy
+> How long you spend on different content
+> List of all your private messages (date, time, person sent to)
+> Info about your photos (how it was taken, where it was taken (GPS), when it was taken)
+
+I feel like the list gets scarier and scarier...
+
+>>> Let's try another one. Have you ever thought about why you're seeing an ad on Google? Feel free to pause the video and google it and try to figure out if you have ad personalization on and how your ads are personalized. Then come back for the rest...
+
+>>> Here is another reflection question --  Which of the following are you OK with your browsing history to be used towards?
+
+> For serving you targeted ads
+> To score you as a candidate for a job
+> To predict your race/ethnicity for voting purposes
+
+>>> Or suppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?
+
+> Companies the social media company has a connection to? That's sort of a given I think.
+> What about companies the social media company sells your data to? That's something we're used to at this point.
+> And what about researchers? In the name of science? That sounds non-threatening, no? 
+
+>>> I'd love to say yes, but let's take a look at this case study on OK Cupid. OK Cupid is one of the earliest online dating platforms.
+
+>>> back inn 2016 researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details
+
+Researchers didn't release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames
+
+>>> And here is a screenshot of an online conversation betweem one of the researchers and someone who had accessed the data. Do you agree with the researchers?
+
+>>> The researchers said "Some may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.
+
+>>> So, let's think... In analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don't violate reasonable expectations of privacy? I don't have concrete answers for you here, but it's something you should be thinking about both when it comes to "your" data and when it comes to using others' data as well.
+

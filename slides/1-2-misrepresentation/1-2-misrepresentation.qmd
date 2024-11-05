@@ -62,10 +62,12 @@ Los Angeles Times.
 
 Moore, Steven C., et al. [**"Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults."**](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826) JAMA internal medicine 176.6 (2016): 816-825.
 
+::: incremental
 -   **Volunteers** were **asked** about their physical activity level over the preceding year.
 -   Half exercised less than about 150 minutes per week, half exercised more.
 -   Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.
 -   Researchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).
+:::
 
 ::: notes
 Carl Bergstrom and Jevin West.

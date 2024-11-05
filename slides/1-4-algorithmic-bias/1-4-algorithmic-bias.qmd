@@ -87,7 +87,10 @@ Reuters.
 ![](images/machine-bias-cover.png)
 
 ::: aside
-Source: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing). 23 May 2016. ProPublica.
+Source: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner.
+[Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing).
+23 May 2016.
+ProPublica.
 :::
 
 ## Risk score errors
@@ -96,7 +99,7 @@ Source: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. [Machine Bi
 What is common among the defendants who were assigned a high/low risk score for reoffending?
 :::
 
-:::: columns
+::::: columns
 ::: {.column width="35%"}
 ![](images/machine-bias-petty-theft-1.png){fig-align="center" width="400" height="333"} ![](images/machine-bias-petty-theft-2.png){fig-align="center" width="400" height="240"}
 :::
@@ -104,22 +107,21 @@ What is common among the defendants who were assigned a high/low risk score for 
 ::: {.column width="35%"}
 ![](images/machine-bias-drug-posession-1.png){fig-align="center" width="400" height="333"} ![](images/machine-bias-drug-posession-2.png){fig-align="center" width="400" height="240"}
 :::
-::::
+:::::
 
 ## ProPublica analysis
 
-**Data:** Risk scores assigned to >7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.
+**Data:** Risk scores assigned to \>7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.
 
 . . .
 
-**Results:** 
+**Results:**
 
 ::: incremental
-- 20% of those predicted to commit violent crimes actually did.
-- Algorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors).
-![](images/propublica-results.png)
-- Algorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.
-- White defendants were mislabeled as low risk more often than black defendants.
+-   20% of those predicted to commit violent crimes actually did.
+-   Algorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors). ![](images/propublica-results.png)
+-   Algorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.
+-   White defendants were mislabeled as low risk more often than black defendants.
 :::
 
 ## Risk scores
@@ -138,8 +140,7 @@ How can an algorithm that doesn't use race as input data be racist?
 > Over the past several decades, many statistical methods have been proposed to address this ecological inference problem.
 > We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records.
 > Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records.
-> [...]
-> We provide open-source software to implement the proposed methodology.
+> \[...\] We provide open-source software to implement the proposed methodology.
 > The open-source software is available for implementing the proposed methodology.
 
 ## **wru** package
@@ -167,65 +168,56 @@ predict_race(voter.file = voters, surname.only = TRUE) |>
   select(surname, contains("pred"))
 ```
 
-## **wru** package
-
-```{r}
-#| cache: true
-#| message: false
-#| warning: false
-
-me <- tibble(surname = "Çetinkaya-Rundel")
-
-predict_race(voter.file = me, surname.only = TRUE)
-```
-
 # Further reading
 
 ## Machine Bias
 
-:::: columns
+::::: columns
 ::: {.column width="35%"}
 [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)\
 
 by Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner
 :::
+
 ::: {.column width="35%"}
 ![](images/machine-bias-cover.png){width="400"}
 :::
-::::
+:::::
 
 ## Ethics and Data Science
 
-:::: columns
+::::: columns
 ::: {.column width="35%"}
 [Ethics and Data Science](https://www.amazon.com/Ethics-Data-Science-Mike-Loukides-ebook/dp/B07GTC8ZN7)\
 
 by Mike Loukides, Hilary Mason, DJ Patil\
 (Free Kindle download)
 :::
+
 ::: {.column width="35%"}
 ![](images/ethics-data-science.jpg){width="400"}
 :::
-::::
+:::::
 
 ## Weapons of Math Destruction
 
-:::: columns
+::::: columns
 ::: {.column width="35%"}
 [Weapons of Math Destruction](https://www.penguin.co.uk/books/304/304513/weapons-of-math-destruction/9780141985411.html)\
 How Big Data Increases Inequality and Threatens Democracy\
 
 by Cathy O'Neil
 :::
+
 ::: {.column width="35%"}
 ![](images/weapons-of-math-destruction.jpg){width="400"}
 :::
-::::
+:::::
 
 ## Algorithms of Oppression
 
-:::: columns
-::: {.column width="35%"}
+:::::: columns
+:::: {.column width="35%"}
 [Algorithms of Oppression](https://nyupress.org/9781479837243/algorithms-of-oppression/)\
 How Search Engines Reinforce Racism\
 
@@ -233,18 +225,18 @@ by Safiya Umoja Noble
 
 <br>
 
-::: .fragment
+::: fragment
 **More recently:** [How AI discriminates and what that means for your Google habit](https://newsroom.ucla.edu/stories/how-ai-discriminates-and-what-that-means-for-your-google-habit)\
 A conversation with UCLA internet studies scholar Safiya Noble\
 
 by Julia Busiek
 :::
-:::
+::::
 
 ::: {.column width="35%"}
 ![](images/algorithms-of-oppression.jpg){width="400"}
 :::
-::::
+::::::
 
 ## Parting thoughts
 

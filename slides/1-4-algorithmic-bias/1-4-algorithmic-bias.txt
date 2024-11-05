@@ -1,13 +1,70 @@
-Hello, and welcome! My name is Mine Çetinkaya-Rundel, and I will be your instructor for the specialization titled Data Science with R. This is the third course in the series -- Data Science Ethics.
+In this video we'll talk about another important consideration in data science ethics -- algorithmic bias.
 
->>> In the first course we introduced the data science cycle with this figure from the book R for Data Science.
+>>> In statistics, we have a principle - Garbage in, garbage out
 
->>> In the second course we dove deeper into data data transformation, formally introduced data tidying via reshaping and joining data, and then took one more step back and learned to import datasets from CSV files and Excel spreadsheet as well as scraping unstructured data off the web and reorganizing them into data frames in R.
+>>> This means if you don’t have good, and by good I mean random and representative, data, results of your analysis will not be reliable or generalizable.
 
->>> In this course we'll take a bit of a break from "how to do this task in R" and ask "should we do this task?" Specifically, we'll discuss topics in data science ethics such as
+A corollary to this is "bias in, bias out".
 
-> misrepresentation of data science results
-> data privacy, and
-> algorithmic bias
+>>> Let's start with Algorithmic bias and gender
 
-Let's get started!
+>>> Take a look at these translations provided by Google? These are going from Turkish, my native language, which doesn't have a gendered third pronoun, to English. The sentence "o bir doctor", which I'd translate as "this person is a doctor" is given as "he is a doctor", but "she is a teacher". There is a pattern here -- certain professions are assigned a male pronoun and certain ones a female. What might be the reason for Google’s gendered translation? And how do ethics play into this situation?
+
+These are probably driven by the data that exists out there on the web. And translation is perpetuating what it sees in the biased data.
+
+>>> Google has actually addressed this issue in most, if not all, translation cases. This is what it looks like when you try to translate from Turkish to English today. But you can imagine these biases exist elsewhere as well.
+
+>>> Here is another example about amazon's experimental hiring algorithm
+
+Amaxon used AI to give job candidates scores ranging from one to five stars -- much like shoppers rate products on Amazon
+However Amazon's system was not rating candidates for software developer jobs and other technical posts in a gender-neutral way; it taught itself that male candidates were preferable
+
+> In fact, further look into it revealed that Gender bias was not the only issue. Problems with the data that underpinned the models’ judgments meant that unqualified candidates were often recommended for all manner of jobs, the people said.
+
+>>> Next let's turn to algorithmic bias and race
+
+>>> Our first example is about facial recognition. Researchers identified gender and skin-type bias in commercial artificial-intelligence systems used in facial recognition software. Examination of facial-analysis software showed an error rate of 0.8% for light-skinned men vs. 34.7% for dark-skinned women. In fact, they foung that a major U.S. technology company that designs facial recognition software claimed an accuracy rate of more than 97%, but the data set used to assess its performance was more than 77% male and more than 83% white.
+
+>>> Race, unfortunately, plays an important factor in criminal sentencing as well. Even when this is supported by an allegedly impartial algorithm. In 2016, ProPublica wrote an extensive article on an algorithm used for rating a defendant's risk of future crime.
+
+>>> Take a look at these photos. What is common among the defendants who were assigned a high/low risk score for reoffending? If your answer is race, you're indeed right.
+
+>>> Th ProPublica analysis on risk scores assigned to over 7000 people arrested in Broward County, Florida and whether they were charged with new crimes over the following 2 years showed that 
+
+> 20% of those predicted to commit violent crimes actually did.
+> The algorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors).
+> In addition, the algorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.
+> and White defendants were mislabeled as low risk more often than black defendants.
+
+>>> So, How can an algorithm that doesn't use race as input data be racist? I'll link to this article at the end of the video so you can dive deeper into answering that question. But remember, bias in, bias out.
+
+>>> Finally, let's talk about algorithms for predicting ethnicity
+
+Researchers who build this algorithm wrote ""In both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology.
+
+Open source software is great, but what they've done is provide a tool anyone can use to predict someone else's race from their last name alone. Is it possible this algorithm could be used for the wrong reasons.
+
+>>> If you're interested, the said "source software" is the wru package. Do you have any ethical concerns about installing this package?
+
+>>> And Was the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use? Regardless of my answers, I've used the software so I can show you how it works. It comes with a list of sample names, and based on those names alone, it predicts the race of the individual.
+
+>>> Hopefully this video was eye opening in terms of the biases that can creep into algorithms and how they can affect or derail, and sometimes help, of course, peoples' lives.
+
+If you're interested in diving further into this topic, I highly recommend
+
+>>> The machine bias article from ProPublica
+
+>>> The book Ethics and Data Science
+
+>>> The book Weapons of Math Destruction - How Big Data Increases Inequality and Threatens Democracy by Cathy O'Neil
+
+>>> and the book Algorithms of Oppression -  How Search Engines Reinforce Racism by Safiya Noble
+
+And more recently there was an interview with the author on How AI discriminates and what that means for your Google habit that might be of interest too.
+
+>>> At some point during your data science learning journey you will learn tools that can be used unethically
+
+> you might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)
+
+> So I hope you keep asking yourself how you can train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points? Hopefully this course will help, but I know it's a tiny fraction of the work we all need to be doing.
+
