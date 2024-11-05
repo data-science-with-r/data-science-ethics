@@ -1,0 +1,108 @@
+---
+title: "Data privacy"
+format: revealjs
+---
+
+# "Your" data
+
+## "Your" data
+
+-   Every time we use apps, websites, and devices, our data is being collected and used or sold to others.
+
+-   More importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people.
+
+## Privacy of your data
+
+::: task
+What pieces of data have you left on the internet today?
+Think through everything you've logged into, clicked on, checked in, either actively or automatically, that might be tracking you.
+Do you know where that data is stored?
+Who it can be accessed by?
+Whether it's shared with others?
+:::
+
+## Sharing your data
+
+::: task
+What are you OK with sharing?
+:::
+
+::::::: columns
+:::: {.column width="35%"}
+::: incremental
+-   Name
+-   Age
+-   Email
+-   Phone Number
+-   List of every video you watch
+-   List of every video you comment on
+-   How you type: speed, accuracy
+:::
+::::
+
+:::: {.column width="35%"}
+::: incremental
+-   How long you spend on different content
+-   List of all your private messages (date, time, person sent to)
+-   Info about your photos (how it was taken, where it was taken (GPS), when it was taken)
+:::
+::::
+:::::::
+
+## What does Google think/know about you?
+
+::: task
+Have you ever thought about why you're seeing an ad on Google?
+Google it!
+Try to figure out if you have ad personalization on and how your ads are personalized.
+:::
+
+## Your browsing history
+
+::: task
+Which of the following are you OK with your browsing history to be used towards?
+:::
+
+::: incremental
+-   For serving you targeted ads
+-   To score you as a candidate for a job
+-   To predict your race/ethnicity for voting purposes
+:::
+
+## Who else gets to use your data?
+
+::: task
+Suppose you create a profile on a social media site and share your personal information on your profile.
+Who else gets to use that data?
+:::
+
+::: incremental
+-   Companies the social media company has a connection to?
+-   Companies the social media company sells your data to?
+-   Researchers?
+:::
+
+# Case study: OK Cupid
+
+## OK Cupid data breach
+
+-   In 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details
+
+-   Researchers didn't release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames
+
+## OK Cupid data breach
+
+![](images/okcupid-tweet.png)
+
+## OK Cupid data breach
+
+> Some may object to the ethics of gathering and releasing this data.
+> However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.
+>
+> Researchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær
+
+## Data privacy
+
+::: task
+In analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don't violate reasonable expectations of privacy?
+:::
