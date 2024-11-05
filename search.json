@@ -1,5 +1,222 @@
 [
   {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#garbage-in-garbage-out-1",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#garbage-in-garbage-out-1",
+    "title": "Algorithmic bias",
+    "section": "Garbage in, garbage out",
+    "text": "Garbage in, garbage out\n\nIn statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.\nCorollary: Bias in, bias out."
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate",
+    "title": "Algorithmic bias",
+    "section": "Google Translate",
+    "text": "Google Translate\n\nWhat might be the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate-1",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate-1",
+    "title": "Algorithmic bias",
+    "section": "Google Translate",
+    "text": "Google Translate\n\n\n\nSource: Reducing gender bias in Google Translate"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
+    "title": "Algorithmic bias",
+    "section": "Amazon’s experimental hiring algorithm",
+    "text": "Amazon’s experimental hiring algorithm\n\n\nUsed AI to give job candidates scores ranging from one to five stars – much like shoppers rate products on Amazon\nAmazon’s system was not rating candidates for software developer jobs and other technical posts in a gender-neutral way; it taught itself that male candidates were preferable\n\n\n\n\nGender bias was not the only issue. Problems with the data that underpinned the models’ judgments meant that unqualified candidates were often recommended for all manner of jobs, the people said.\n\n\n\n\nJeffrey Dastin. Amazon scraps secret AI recruiting tool that showed bias against women. Reuters. 10 Oct 2018."
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#facial-recognition",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#facial-recognition",
+    "title": "Algorithmic bias",
+    "section": "Facial recognition",
+    "text": "Facial recognition\n\n\n\nJoy Buolamwini and Timnit Gebru’s research identified that gender and skin-type bias in commercial artificial-intelligence systems used in facial recognition software.\nExamination of facial-analysis software showed an error rate of 0.8% for light-skinned men vs. 34.7% for dark-skinned women.\nA major U.S. technology company that designs facial recognition software claimed an accuracy rate of more than 97%, but the data set used to assess its performance was more than 77% male and more than 83% white.\n\n\n\n\n\n\nStudy finds gender and skin-type bias in commercial artificial-intelligence systems"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#criminal-sentencing",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#criminal-sentencing",
+    "title": "Algorithmic bias",
+    "section": "Criminal sentencing",
+    "text": "Criminal sentencing\n2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:\n\n\n\nSource: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. Machine Bias. 23 May 2016. ProPublica."
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-score-errors",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-score-errors",
+    "title": "Algorithmic bias",
+    "section": "Risk score errors",
+    "text": "Risk score errors\n\nWhat is common among the defendants who were assigned a high/low risk score for reoffending?"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#propublica-analysis",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#propublica-analysis",
+    "title": "Algorithmic bias",
+    "section": "ProPublica analysis",
+    "text": "ProPublica analysis\nData: Risk scores assigned to &gt;7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.\n\nResults:\n\n\n20% of those predicted to commit violent crimes actually did.\nAlgorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors). \nAlgorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.\nWhite defendants were mislabeled as low risk more often than black defendants."
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-scores",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-scores",
+    "title": "Algorithmic bias",
+    "section": "Risk scores",
+    "text": "Risk scores\n\nHow can an algorithm that doesn’t use race as input data be racist?"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#predicting-ethnicity",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#predicting-ethnicity",
+    "title": "Algorithmic bias",
+    "section": "Predicting ethnicity",
+    "text": "Predicting ethnicity\nImproving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record (Imran and Khan, 2016)\n\nIn both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. […] We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology."
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package",
+    "title": "Algorithmic bias",
+    "section": "wru package",
+    "text": "wru package\nThe said “source software” is the wru package: https://github.com/kosukeimai/wru.\n\nDo you have any ethical concerns about installing this package?"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-1",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-1",
+    "title": "Algorithmic bias",
+    "section": "wru package",
+    "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n      surname    pred.whi    pred.bla     pred.his\n1      Khanna 0.045110474 0.003067623 0.0068522723\n2        Imai 0.052645440 0.001334812 0.0558160072\n3      Rivera 0.043285692 0.008204605 0.9136195794\n4     Fifield 0.895405704 0.001911388 0.0337464844\n5        Zhou 0.006572555 0.001298962 0.0005388581\n6    Ratkovic 0.861236727 0.008212824 0.0095395642\n7     Johnson 0.543815322 0.344128607 0.0272403940\n8       Lopez 0.038939877 0.004920643 0.9318797791\n10 Wantchekon 0.330697188 0.194700665 0.4042849478\n9       Morse 0.866360147 0.044429853 0.0246568086\n      pred.asi    pred.oth\n1  0.860411906 0.084557725\n2  0.719376581 0.170827160\n3  0.024316883 0.010573240\n4  0.011079323 0.057857101\n5  0.982365594 0.009224032\n6  0.011334635 0.109676251\n7  0.007405765 0.077409913\n8  0.012154125 0.012105576\n10 0.021379541 0.048937658\n9  0.010219712 0.054333479"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-2",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-2",
+    "title": "Algorithmic bias",
+    "section": "wru package",
+    "text": "wru package\n\nme &lt;- tibble(surname = \"Çetinkaya-Rundel\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n           surname  pred.whi pred.bla pred.his pred.asi\n1 Çetinkaya-Rundel 0.9177967        0        0        0\n    pred.oth\n1 0.08220329"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#machine-bias",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#machine-bias",
+    "title": "Algorithmic bias",
+    "section": "Machine Bias",
+    "text": "Machine Bias\n\n\nMachine Bias\n\nby Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#ethics-and-data-science",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#ethics-and-data-science",
+    "title": "Algorithmic bias",
+    "section": "Ethics and Data Science",
+    "text": "Ethics and Data Science\n\n\nEthics and Data Science\n\nby Mike Loukides, Hilary Mason, DJ Patil\n(Free Kindle download)"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#weapons-of-math-destruction",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#weapons-of-math-destruction",
+    "title": "Algorithmic bias",
+    "section": "Weapons of Math Destruction",
+    "text": "Weapons of Math Destruction\n\n\nWeapons of Math Destruction\nHow Big Data Increases Inequality and Threatens Democracy\n\nby Cathy O’Neil"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#algorithms-of-oppression",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#algorithms-of-oppression",
+    "title": "Algorithmic bias",
+    "section": "Algorithms of Oppression",
+    "text": "Algorithms of Oppression\n\n\nAlgorithms of Oppression\nHow Search Engines Reinforce Racism\n\nby Safiya Umoja Noble\n\n\nMore recently: How AI discriminates and what that means for your Google habit\nA conversation with UCLA internet studies scholar Safiya Noble\n\nby Julia Busiek"
+  },
+  {
+    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#parting-thoughts",
+    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#parting-thoughts",
+    "title": "Algorithmic bias",
+    "section": "Parting thoughts",
+    "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\n\n\n\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
+  },
+  {
+    "objectID": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
+    "href": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
+    "title": "Welcome",
+    "section": "Transform <-> visualize",
+    "text": "Transform &lt;-&gt; visualize"
+  },
+  {
+    "objectID": "slides/1-1-welcome/1-1-welcome.html#import---tidy",
+    "href": "slides/1-1-welcome/1-1-welcome.html#import---tidy",
+    "title": "Welcome",
+    "section": "Import <-> tidy",
+    "text": "Import &lt;-&gt; tidy"
+  },
+  {
+    "objectID": "slides/1-1-welcome/1-1-welcome.html#data-science-ethics",
+    "href": "slides/1-1-welcome/1-1-welcome.html#data-science-ethics",
+    "title": "Welcome",
+    "section": "Data science ethics",
+    "text": "Data science ethics\n\n\nMisrepresentation\nData privacy\nAlgorithmic bias"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
+    "href": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
+    "title": "Data privacy",
+    "section": "“Your” data",
+    "text": "“Your” data\n\nEvery time we use apps, websites, and devices, our data is being collected and used or sold to others.\nMore importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people."
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
+    "href": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
+    "title": "Data privacy",
+    "section": "Privacy of your data",
+    "text": "Privacy of your data\n\nWhat pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
+    "href": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
+    "title": "Data privacy",
+    "section": "Sharing your data",
+    "text": "Sharing your data\n\nWhat are you OK with sharing?\n\n\n\n\n\nName\nAge\nEmail\nPhone Number\nList of every video you watch\nList of every video you comment on\nHow you type: speed, accuracy\n\n\n\n\n\nHow long you spend on different content\nList of all your private messages (date, time, person sent to)\nInfo about your photos (how it was taken, where it was taken (GPS), when it was taken)"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
+    "href": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
+    "title": "Data privacy",
+    "section": "What does Google think/know about you?",
+    "text": "What does Google think/know about you?\n\nHave you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized."
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
+    "href": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
+    "title": "Data privacy",
+    "section": "Your browsing history",
+    "text": "Your browsing history\n\nWhich of the following are you OK with your browsing history to be used towards?\n\n\n\nFor serving you targeted ads\nTo score you as a candidate for a job\nTo predict your race/ethnicity for voting purposes"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
+    "href": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
+    "title": "Data privacy",
+    "section": "Who else gets to use your data?",
+    "text": "Who else gets to use your data?\n\nSuppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?\n\n\n\nCompanies the social media company has a connection to?\nCompanies the social media company sells your data to?\nResearchers?"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
+    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
+    "title": "Data privacy",
+    "section": "OK Cupid data breach",
+    "text": "OK Cupid data breach\n\nIn 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details\nResearchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
+    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
+    "title": "Data privacy",
+    "section": "OK Cupid data breach",
+    "text": "OK Cupid data breach"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
+    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
+    "title": "Data privacy",
+    "section": "OK Cupid data breach",
+    "text": "OK Cupid data breach\n\nSome may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.\nResearchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær"
+  },
+  {
+    "objectID": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
+    "href": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
+    "title": "Data privacy",
+    "section": "Data privacy",
+    "text": "Data privacy\n\nIn analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don’t violate reasonable expectations of privacy?"
+  },
+  {
     "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#misrepresenting-data-science-results",
     "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#misrepresenting-data-science-results",
     "title": "Misrepresentation",
@@ -123,104 +340,13 @@
     "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#how-charts-lie",
     "title": "Misrepresentation",
     "section": "How Charts Lie",
-    "text": "How Charts Lie\n\n\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
+    "text": "How Charts Lie\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
   },
   {
     "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#calling-bullshit",
     "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#calling-bullshit",
     "title": "Misrepresentation",
     "section": "Calling Bullshit",
-    "text": "Calling Bullshit\n\n\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
-    "href": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
-    "title": "Data privacy",
-    "section": "“Your” data",
-    "text": "“Your” data\n\nEvery time we use apps, websites, and devices, our data is being collected and used or sold to others.\nMore importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people."
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
-    "title": "Data privacy",
-    "section": "Privacy of your data",
-    "text": "Privacy of your data\n\nWhat pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
-    "title": "Data privacy",
-    "section": "Sharing your data",
-    "text": "Sharing your data\n\nWhat are you OK with sharing?\n\n\n\n\n\nName\nAge\nEmail\nPhone Number\nList of every video you watch\nList of every video you comment on\nHow you type: speed, accuracy\n\n\n\n\n\nHow long you spend on different content\nList of all your private messages (date, time, person sent to)\nInfo about your photos (how it was taken, where it was taken (GPS), when it was taken)"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
-    "href": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
-    "title": "Data privacy",
-    "section": "What does Google think/know about you?",
-    "text": "What does Google think/know about you?\n\nHave you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized."
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
-    "href": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
-    "title": "Data privacy",
-    "section": "Your browsing history",
-    "text": "Your browsing history\n\nWhich of the following are you OK with your browsing history to be used towards?\n\n\n\nFor serving you targeted ads\nTo score you as a candidate for a job\nTo predict your race/ethnicity for voting purposes"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
-    "title": "Data privacy",
-    "section": "Who else gets to use your data?",
-    "text": "Who else gets to use your data?\n\nSuppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?\n\n\n\nCompanies the social media company has a connection to?\nCompanies the social media company sells your data to?\nResearchers?"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
-    "title": "Data privacy",
-    "section": "OK Cupid data breach",
-    "text": "OK Cupid data breach\n\nIn 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details\nResearchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
-    "title": "Data privacy",
-    "section": "OK Cupid data breach",
-    "text": "OK Cupid data breach"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
-    "title": "Data privacy",
-    "section": "OK Cupid data breach",
-    "text": "OK Cupid data breach\n\nSome may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.\nResearchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær"
-  },
-  {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
-    "href": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
-    "title": "Data privacy",
-    "section": "Data privacy",
-    "text": "Data privacy\n\nIn analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don’t violate reasonable expectations of privacy?"
-  },
-  {
-    "objectID": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
-    "href": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
-    "title": "Welcome",
-    "section": "Transform <-> visualize",
-    "text": "Transform &lt;-&gt; visualize"
-  },
-  {
-    "objectID": "slides/1-1-welcome/1-1-welcome.html#import---tidy",
-    "href": "slides/1-1-welcome/1-1-welcome.html#import---tidy",
-    "title": "Welcome",
-    "section": "Import <-> tidy",
-    "text": "Import &lt;-&gt; tidy"
-  },
-  {
-    "objectID": "slides/1-1-welcome/1-1-welcome.html#data-science-ethics",
-    "href": "slides/1-1-welcome/1-1-welcome.html#data-science-ethics",
-    "title": "Welcome",
-    "section": "Data science ethics",
-    "text": "Data science ethics\n\n\nMisrepresentation\nData privacy\nAlgorithmic bias"
+    "text": "Calling Bullshit\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
   }
 ]
