@@ -1,5 +1,138 @@
 [
   {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#misrepresenting-data-science-results",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#misrepresenting-data-science-results",
+    "title": "Misrepresentation",
+    "section": "Misrepresenting data science results",
+    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#time-coverage",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#time-coverage",
+    "title": "Misrepresentation",
+    "section": "TIME coverage",
+    "text": "TIME coverage\n\nHow plausible is the statement in the title of this article?\n\n\n\n\nAlice Park. Exercise Can Lower Risk of Some Cancers By 20%. Time Magazine. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#la-times-coverage",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#la-times-coverage",
+    "title": "Misrepresentation",
+    "section": "LA Times coverage",
+    "text": "LA Times coverage\n\nWhat does “research shows” mean?\n\n\n\n\nMelissa Healy. Exercising drives down risk for 13 cancers, research shows.\nLos Angeles Times. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#original-study",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#original-study",
+    "title": "Misrepresentation",
+    "section": "Original study",
+    "text": "Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#tax-cuts",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#tax-cuts",
+    "title": "Misrepresentation",
+    "section": "Tax cuts",
+    "text": "Tax cuts\n\nWhat is the difference between these two pictures? Which presents a better way to represent these data?\n\n\n\n\nChristopher Ingraham. “You’ve been reading charts wrong. Here’s how a pro does it.”. The Washington Post. 14 October 2019."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas",
+    "title": "Misrepresentation",
+    "section": "Cost of gas",
+    "text": "Cost of gas\n\nWhat is wrong with this picture? How would you correct it?"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas-1",
+    "title": "Misrepresentation",
+    "section": "Cost of gas",
+    "text": "Cost of gas"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga",
+    "title": "Misrepresentation",
+    "section": "COVID in GA",
+    "text": "COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga-1",
+    "title": "Misrepresentation",
+    "section": "COVID in GA",
+    "text": "COVID in GA\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services",
+    "title": "Misrepresentation",
+    "section": "PP services",
+    "text": "PP services\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and dishonest chart. Vox. 29 September 2019."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services-1",
+    "title": "Misrepresentation",
+    "section": "PP services",
+    "text": "PP services"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-map",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-map",
+    "title": "Misrepresentation",
+    "section": "Voting map",
+    "text": "Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#two-alternate-tales",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#two-alternate-tales",
+    "title": "Misrepresentation",
+    "section": "Two alternate tales",
+    "text": "Two alternate tales\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages",
+    "title": "Misrepresentation",
+    "section": "Voting percentages",
+    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages-1",
+    "title": "Misrepresentation",
+    "section": "Voting percentages",
+    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence",
+    "title": "Misrepresentation",
+    "section": "Catalan independence",
+    "text": "Catalan independence\nOn December 19, 2014, the front page of Spanish national newspaper El País read “Catalan public opinion swings toward ‘no’ for independence, says survey”.\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. The truthful art: Data, charts, and maps for communication. New Riders, 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence-1",
+    "title": "Misrepresentation",
+    "section": "Catalan independence",
+    "text": "Catalan independence\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”, Power from Statistics: Data Information and Knowledge, 2017."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#how-charts-lie",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#how-charts-lie",
+    "title": "Misrepresentation",
+    "section": "How Charts Lie",
+    "text": "How Charts Lie\n\n\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#calling-bullshit",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#calling-bullshit",
+    "title": "Misrepresentation",
+    "section": "Calling Bullshit",
+    "text": "Calling Bullshit\n\n\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
+  },
+  {
     "objectID": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
     "href": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
     "title": "Welcome",
