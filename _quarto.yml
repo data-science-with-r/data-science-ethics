@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "Data science-ethics"
+  navbar:
+    tools:
+        - icon: github
+          href: https://github.com/data-science-with-r
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    toc: true
+
+mainfont: Atkinson Hyperlegible
+theme:
+  light: [flatly, style/dsr.scss]
+  dark: [darkly, style/dsr-dark.scss]
+code-link: true
+highlight-style: github
+
+execute:
+  freeze: auto
+
+editor: visual
