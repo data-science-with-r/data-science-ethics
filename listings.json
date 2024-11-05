@@ -1,0 +1,13 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/slides/1-1-welcome/1-1-welcome.html",
+      "/slides/1-2-misrepresentation/1-2-misrepresentation.html",
+      "/slides/1-3-privacy/1-3-privacy.html",
+      "/slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html",
+      "/code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
+      "/code-alongs/1-2-sector-services/1-2-sector-services.html"
+    ]
+  }
+]

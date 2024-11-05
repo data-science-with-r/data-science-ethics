@@ -1,129 +1,374 @@
 [
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#garbage-in-garbage-out-1",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#garbage-in-garbage-out-1",
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#misrepresenting-data-science-results",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#misrepresenting-data-science-results",
+    "title": "Misrepresentation",
+    "section": "Misrepresenting data science results",
+    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#time-coverage",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#time-coverage",
+    "title": "Misrepresentation",
+    "section": "TIME coverage",
+    "text": "TIME coverage\n\nHow plausible is the statement in the title of this article?\n\n\n\n\nAlice Park. Exercise Can Lower Risk of Some Cancers By 20%. Time Magazine. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#la-times-coverage",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#la-times-coverage",
+    "title": "Misrepresentation",
+    "section": "LA Times coverage",
+    "text": "LA Times coverage\n\nWhat does “research shows” mean?\n\n\n\n\nMelissa Healy. Exercising drives down risk for 13 cancers, research shows.\nLos Angeles Times. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#original-study",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#original-study",
+    "title": "Misrepresentation",
+    "section": "Original study",
+    "text": "Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#tax-cuts",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#tax-cuts",
+    "title": "Misrepresentation",
+    "section": "Tax cuts",
+    "text": "Tax cuts\n\nWhat is the difference between these two pictures? Which presents a better way to represent these data?\n\n\n\n\nChristopher Ingraham. “You’ve been reading charts wrong. Here’s how a pro does it.”. The Washington Post. 14 October 2019."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas",
+    "title": "Misrepresentation",
+    "section": "Cost of gas",
+    "text": "Cost of gas\n\nWhat is wrong with this picture? How would you correct it?"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#cost-of-gas-1",
+    "title": "Misrepresentation",
+    "section": "Cost of gas",
+    "text": "Cost of gas"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga",
+    "title": "Misrepresentation",
+    "section": "COVID in GA",
+    "text": "COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#covid-in-ga-1",
+    "title": "Misrepresentation",
+    "section": "COVID in GA",
+    "text": "COVID in GA\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services",
+    "title": "Misrepresentation",
+    "section": "PP services",
+    "text": "PP services\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and dishonest chart. Vox. 29 September 2019."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#pp-services-1",
+    "title": "Misrepresentation",
+    "section": "PP services",
+    "text": "PP services"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-map",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-map",
+    "title": "Misrepresentation",
+    "section": "Voting map",
+    "text": "Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#two-alternate-tales",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#two-alternate-tales",
+    "title": "Misrepresentation",
+    "section": "Two alternate tales",
+    "text": "Two alternate tales\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages",
+    "title": "Misrepresentation",
+    "section": "Voting percentages",
+    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#voting-percentages-1",
+    "title": "Misrepresentation",
+    "section": "Voting percentages",
+    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence",
+    "title": "Misrepresentation",
+    "section": "Catalan independence",
+    "text": "Catalan independence\nOn December 19, 2014, the front page of Spanish national newspaper El País read “Catalan public opinion swings toward ‘no’ for independence, says survey”.\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. The truthful art: Data, charts, and maps for communication. New Riders, 2016."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence-1",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#catalan-independence-1",
+    "title": "Misrepresentation",
+    "section": "Catalan independence",
+    "text": "Catalan independence\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”, Power from Statistics: Data Information and Knowledge, 2017."
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#how-charts-lie",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#how-charts-lie",
+    "title": "Misrepresentation",
+    "section": "How Charts Lie",
+    "text": "How Charts Lie\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
+  },
+  {
+    "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#calling-bullshit",
+    "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#calling-bullshit",
+    "title": "Misrepresentation",
+    "section": "Calling Bullshit",
+    "text": "Calling Bullshit\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
+  },
+  {
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#garbage-in-garbage-out-1",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#garbage-in-garbage-out-1",
     "title": "Algorithmic bias",
     "section": "Garbage in, garbage out",
     "text": "Garbage in, garbage out\n\nIn statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.\nCorollary: Bias in, bias out."
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#google-translate",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#google-translate",
     "title": "Algorithmic bias",
     "section": "Google Translate",
     "text": "Google Translate\n\nWhat might be the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate-1",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#google-translate-1",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#google-translate-1",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#google-translate-1",
     "title": "Algorithmic bias",
     "section": "Google Translate",
     "text": "Google Translate\n\n\n\nSource: Reducing gender bias in Google Translate"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#amazons-experimental-hiring-algorithm",
     "title": "Algorithmic bias",
     "section": "Amazon’s experimental hiring algorithm",
     "text": "Amazon’s experimental hiring algorithm\n\n\nUsed AI to give job candidates scores ranging from one to five stars – much like shoppers rate products on Amazon\nAmazon’s system was not rating candidates for software developer jobs and other technical posts in a gender-neutral way; it taught itself that male candidates were preferable\n\n\n\n\nGender bias was not the only issue. Problems with the data that underpinned the models’ judgments meant that unqualified candidates were often recommended for all manner of jobs, the people said.\n\n\n\n\nJeffrey Dastin. Amazon scraps secret AI recruiting tool that showed bias against women. Reuters. 10 Oct 2018."
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#facial-recognition",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#facial-recognition",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#facial-recognition",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#facial-recognition",
     "title": "Algorithmic bias",
     "section": "Facial recognition",
     "text": "Facial recognition\n\n\n\nJoy Buolamwini and Timnit Gebru’s research identified that gender and skin-type bias in commercial artificial-intelligence systems used in facial recognition software.\nExamination of facial-analysis software showed an error rate of 0.8% for light-skinned men vs. 34.7% for dark-skinned women.\nA major U.S. technology company that designs facial recognition software claimed an accuracy rate of more than 97%, but the data set used to assess its performance was more than 77% male and more than 83% white.\n\n\n\n\n\n\nStudy finds gender and skin-type bias in commercial artificial-intelligence systems"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#criminal-sentencing",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#criminal-sentencing",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#criminal-sentencing",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#criminal-sentencing",
     "title": "Algorithmic bias",
     "section": "Criminal sentencing",
     "text": "Criminal sentencing\n2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:\n\n\n\nSource: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. Machine Bias. 23 May 2016. ProPublica."
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-score-errors",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-score-errors",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#risk-score-errors",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#risk-score-errors",
     "title": "Algorithmic bias",
     "section": "Risk score errors",
     "text": "Risk score errors\n\nWhat is common among the defendants who were assigned a high/low risk score for reoffending?"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#propublica-analysis",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#propublica-analysis",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#propublica-analysis",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#propublica-analysis",
     "title": "Algorithmic bias",
     "section": "ProPublica analysis",
     "text": "ProPublica analysis\nData: Risk scores assigned to &gt;7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.\n\nResults:\n\n\n20% of those predicted to commit violent crimes actually did.\nAlgorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors). \nAlgorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.\nWhite defendants were mislabeled as low risk more often than black defendants."
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-scores",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#risk-scores",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#risk-scores",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#risk-scores",
     "title": "Algorithmic bias",
     "section": "Risk scores",
     "text": "Risk scores\n\nHow can an algorithm that doesn’t use race as input data be racist?"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#predicting-ethnicity",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#predicting-ethnicity",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#predicting-ethnicity",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#predicting-ethnicity",
     "title": "Algorithmic bias",
     "section": "Predicting ethnicity",
     "text": "Predicting ethnicity\nImproving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record (Imran and Khan, 2016)\n\nIn both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. […] We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology."
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package",
     "title": "Algorithmic bias",
     "section": "wru package",
     "text": "wru package\nThe said “source software” is the wru package: https://github.com/kosukeimai/wru.\n\nDo you have any ethical concerns about installing this package?"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-1",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-1",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-1",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-1",
     "title": "Algorithmic bias",
     "section": "wru package",
     "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n      surname    pred.whi    pred.bla     pred.his\n1      Khanna 0.045110474 0.003067623 0.0068522723\n2        Imai 0.052645440 0.001334812 0.0558160072\n3      Rivera 0.043285692 0.008204605 0.9136195794\n4     Fifield 0.895405704 0.001911388 0.0337464844\n5        Zhou 0.006572555 0.001298962 0.0005388581\n6    Ratkovic 0.861236727 0.008212824 0.0095395642\n7     Johnson 0.543815322 0.344128607 0.0272403940\n8       Lopez 0.038939877 0.004920643 0.9318797791\n10 Wantchekon 0.330697188 0.194700665 0.4042849478\n9       Morse 0.866360147 0.044429853 0.0246568086\n      pred.asi    pred.oth\n1  0.860411906 0.084557725\n2  0.719376581 0.170827160\n3  0.024316883 0.010573240\n4  0.011079323 0.057857101\n5  0.982365594 0.009224032\n6  0.011334635 0.109676251\n7  0.007405765 0.077409913\n8  0.012154125 0.012105576\n10 0.021379541 0.048937658\n9  0.010219712 0.054333479"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-2",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#wru-package-2",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-2",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-2",
     "title": "Algorithmic bias",
     "section": "wru package",
     "text": "wru package\n\nme &lt;- tibble(surname = \"Çetinkaya-Rundel\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n           surname  pred.whi pred.bla pred.his pred.asi\n1 Çetinkaya-Rundel 0.9177967        0        0        0\n    pred.oth\n1 0.08220329"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#machine-bias",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#machine-bias",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#machine-bias",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#machine-bias",
     "title": "Algorithmic bias",
     "section": "Machine Bias",
     "text": "Machine Bias\n\n\nMachine Bias\n\nby Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#ethics-and-data-science",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#ethics-and-data-science",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#ethics-and-data-science",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#ethics-and-data-science",
     "title": "Algorithmic bias",
     "section": "Ethics and Data Science",
     "text": "Ethics and Data Science\n\n\nEthics and Data Science\n\nby Mike Loukides, Hilary Mason, DJ Patil\n(Free Kindle download)"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#weapons-of-math-destruction",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#weapons-of-math-destruction",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#weapons-of-math-destruction",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#weapons-of-math-destruction",
     "title": "Algorithmic bias",
     "section": "Weapons of Math Destruction",
     "text": "Weapons of Math Destruction\n\n\nWeapons of Math Destruction\nHow Big Data Increases Inequality and Threatens Democracy\n\nby Cathy O’Neil"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#algorithms-of-oppression",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#algorithms-of-oppression",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#algorithms-of-oppression",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#algorithms-of-oppression",
     "title": "Algorithmic bias",
     "section": "Algorithms of Oppression",
     "text": "Algorithms of Oppression\n\n\nAlgorithms of Oppression\nHow Search Engines Reinforce Racism\n\nby Safiya Umoja Noble\n\n\nMore recently: How AI discriminates and what that means for your Google habit\nA conversation with UCLA internet studies scholar Safiya Noble\n\nby Julia Busiek"
   },
   {
-    "objectID": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#parting-thoughts",
-    "href": "slides/1-3-algorithmic-bias/1-3-algorithmic-bias.html#parting-thoughts",
+    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#parting-thoughts",
+    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#parting-thoughts",
     "title": "Algorithmic bias",
     "section": "Parting thoughts",
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\n\n\n\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": " Data science ethics",
+    "section": "",
+    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": " Data science ethics",
+    "section": "",
+    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#code-alongs",
+    "href": "index.html#code-alongs",
+    "title": " Data science ethics",
+    "section": "Code alongs",
+    "text": "Code alongs\n\n\n\n\n\nTitle\n\n\n\n\n\n\nSector and services (Complete)\n\n\n\n\nSector and services\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#exercises",
+    "href": "index.html#exercises",
+    "title": " Data science ethics",
+    "section": "Exercises",
+    "text": "Exercises\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html",
+    "title": "Sector and services",
+    "section": "",
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them.\n\n\n\n\n\n\n\n\nWe will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)\n\n\n\n\nThese data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html#goal",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html#goal",
+    "title": "Sector and services",
+    "section": "",
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html#packages",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html#packages",
+    "title": "Sector and services",
+    "section": "",
+    "text": "We will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html#data",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html#data",
+    "title": "Sector and services",
+    "section": "",
+    "text": "These data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html#critique",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html#critique",
+    "title": "Sector and services",
+    "section": "Critique",
+    "text": "Critique\nWhat is misleading about this graph?\nAdd response here."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html#recreate-and-improve",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services.html#recreate-and-improve",
+    "title": "Sector and services",
+    "section": "Recreate and improve",
+    "text": "Recreate and improve\n\nConfirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\n# add code here\n\n\nCreate an improved version of the visualization. Your improved visualization:\nshould also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (gray, #FF3205, and #006697) and appear in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\ndoes not need to show percentages in the segments\n\n\n# add code here\n\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nAdd response here."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them.\n\n\n\n\n\n\n\n\nWe will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)\n\n\n\n\nThese data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "We will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "These data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
+    "title": "Sector and services (Complete)",
+    "section": "Critique",
+    "text": "Critique\nWhat is misleading about this graph?\nThe graph is misleading because the segments are not to scale (e.g., making it seem like the difference between public, private, and don’t know are closer than the data shows)."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
+    "title": "Sector and services (Complete)",
+    "section": "Recreate and improve",
+    "text": "Recreate and improve\n\nConfirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\nsurvation_longer &lt;- survation |&gt;\n  pivot_longer(\n    cols = -ID,\n    names_to = \"service\",\n    values_to = \"sector\"\n  )\n\nsurvation_longer |&gt;\n  count(service, sector) |&gt;\n  group_by(service) |&gt;\n  mutate(prop = round(n / sum(n), 2))\n\n# A tibble: 12 × 4\n# Groups:   service [4]\n   service    sector             n  prop\n   &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 Energy     Don't know       130  0.07\n 2 Energy     Private sector   112  0.06\n 3 Energy     Public sector   1616  0.87\n 4 Rail       Don't know        56  0.03\n 5 Rail       Private sector    56  0.03\n 6 Rail       Public sector   1746  0.94\n 7 Royal Mail Don't know       149  0.08\n 8 Royal Mail Private sector   130  0.07\n 9 Royal Mail Public sector   1579  0.85\n10 Water      Don't know        56  0.03\n11 Water      Private sector    56  0.03\n12 Water      Public sector   1746  0.94\n\n\n\nCreate an improved version of the visualization. Your improved visualization:\nshould also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (gray, #FF3205, and #006697) and appear in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\ndoes not need to show percentages in the segments\n\n\nsurvation_longer |&gt;\n  mutate(\n    service = fct_relevel(\n      service, \"Royal Mail\", \"Energy\", \"Water\", \"Rail\"\n    ),\n    sector = fct_rev(\n      fct_relevel(sector, \"Public sector\", \"Private sector\", \"Don't know\"))\n    ) |&gt;\n  ggplot(aes(y = service, fill = sector)) +\n  geom_bar() +\n  scale_fill_manual(values = c(\"gray\", \"#FF3205\", \"#006697\")) +\n  guides(fill = guide_legend(reverse = TRUE)) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(\n    x = NULL,\n    y = NULL,\n    fill = NULL,\n    title = \"Do you think the following services should be\\nrun in the private sector or the public sector?\",\n    caption = \"Base: All Respondents Unweighted Total: Total=1858\"\n  )\n\n\n\n\n\n\n\n\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nYes, the improved visualization sends a much different message. Now, at first glance, it is more obvious that, regardless of service, most individuals voted that they should be handled in the public sector instead of the private or don’t know. Before, the differences within sector were less obvious due to poor scaling."
   },
   {
     "objectID": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
@@ -147,206 +392,73 @@
     "text": "Data science ethics\n\n\nMisrepresentation\nData privacy\nAlgorithmic bias"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
-    "href": "slides/1-2-privacy/1-2-privacy.html#your-data-1",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#your-data-1",
+    "href": "slides/1-3-privacy/1-3-privacy.html#your-data-1",
     "title": "Data privacy",
     "section": "“Your” data",
     "text": "“Your” data\n\nEvery time we use apps, websites, and devices, our data is being collected and used or sold to others.\nMore importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people."
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#privacy-of-your-data",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#privacy-of-your-data",
+    "href": "slides/1-3-privacy/1-3-privacy.html#privacy-of-your-data",
     "title": "Data privacy",
     "section": "Privacy of your data",
     "text": "Privacy of your data\n\nWhat pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#sharing-your-data",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#sharing-your-data",
+    "href": "slides/1-3-privacy/1-3-privacy.html#sharing-your-data",
     "title": "Data privacy",
     "section": "Sharing your data",
     "text": "Sharing your data\n\nWhat are you OK with sharing?\n\n\n\n\n\nName\nAge\nEmail\nPhone Number\nList of every video you watch\nList of every video you comment on\nHow you type: speed, accuracy\n\n\n\n\n\nHow long you spend on different content\nList of all your private messages (date, time, person sent to)\nInfo about your photos (how it was taken, where it was taken (GPS), when it was taken)"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
-    "href": "slides/1-2-privacy/1-2-privacy.html#what-does-google-thinkknow-about-you",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#what-does-google-thinkknow-about-you",
+    "href": "slides/1-3-privacy/1-3-privacy.html#what-does-google-thinkknow-about-you",
     "title": "Data privacy",
     "section": "What does Google think/know about you?",
     "text": "What does Google think/know about you?\n\nHave you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized."
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
-    "href": "slides/1-2-privacy/1-2-privacy.html#your-browsing-history",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#your-browsing-history",
+    "href": "slides/1-3-privacy/1-3-privacy.html#your-browsing-history",
     "title": "Data privacy",
     "section": "Your browsing history",
     "text": "Your browsing history\n\nWhich of the following are you OK with your browsing history to be used towards?\n\n\n\nFor serving you targeted ads\nTo score you as a candidate for a job\nTo predict your race/ethnicity for voting purposes"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
-    "href": "slides/1-2-privacy/1-2-privacy.html#who-else-gets-to-use-your-data",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#who-else-gets-to-use-your-data",
+    "href": "slides/1-3-privacy/1-3-privacy.html#who-else-gets-to-use-your-data",
     "title": "Data privacy",
     "section": "Who else gets to use your data?",
     "text": "Who else gets to use your data?\n\nSuppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?\n\n\n\nCompanies the social media company has a connection to?\nCompanies the social media company sells your data to?\nResearchers?"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach",
+    "href": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach",
     "title": "Data privacy",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach\n\nIn 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details\nResearchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-1",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach-1",
+    "href": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach-1",
     "title": "Data privacy",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
-    "href": "slides/1-2-privacy/1-2-privacy.html#ok-cupid-data-breach-2",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach-2",
+    "href": "slides/1-3-privacy/1-3-privacy.html#ok-cupid-data-breach-2",
     "title": "Data privacy",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach\n\nSome may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.\nResearchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær"
   },
   {
-    "objectID": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
-    "href": "slides/1-2-privacy/1-2-privacy.html#data-privacy",
+    "objectID": "slides/1-3-privacy/1-3-privacy.html#data-privacy",
+    "href": "slides/1-3-privacy/1-3-privacy.html#data-privacy",
     "title": "Data privacy",
     "section": "Data privacy",
     "text": "Data privacy\n\nIn analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don’t violate reasonable expectations of privacy?"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#misrepresenting-data-science-results",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#misrepresenting-data-science-results",
-    "title": "Misrepresentation",
-    "section": "Misrepresenting data science results",
-    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#time-coverage",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#time-coverage",
-    "title": "Misrepresentation",
-    "section": "TIME coverage",
-    "text": "TIME coverage\n\nHow plausible is the statement in the title of this article?\n\n\n\n\nAlice Park. Exercise Can Lower Risk of Some Cancers By 20%. Time Magazine. 16 May 2016."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#la-times-coverage",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#la-times-coverage",
-    "title": "Misrepresentation",
-    "section": "LA Times coverage",
-    "text": "LA Times coverage\n\nWhat does “research shows” mean?\n\n\n\n\nMelissa Healy. Exercising drives down risk for 13 cancers, research shows.\nLos Angeles Times. 16 May 2016."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#original-study",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#original-study",
-    "title": "Misrepresentation",
-    "section": "Original study",
-    "text": "Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#tax-cuts",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#tax-cuts",
-    "title": "Misrepresentation",
-    "section": "Tax cuts",
-    "text": "Tax cuts\n\nWhat is the difference between these two pictures? Which presents a better way to represent these data?\n\n\n\n\nChristopher Ingraham. “You’ve been reading charts wrong. Here’s how a pro does it.”. The Washington Post. 14 October 2019."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#cost-of-gas",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#cost-of-gas",
-    "title": "Misrepresentation",
-    "section": "Cost of gas",
-    "text": "Cost of gas\n\nWhat is wrong with this picture? How would you correct it?"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#cost-of-gas-1",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#cost-of-gas-1",
-    "title": "Misrepresentation",
-    "section": "Cost of gas",
-    "text": "Cost of gas"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#covid-in-ga",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#covid-in-ga",
-    "title": "Misrepresentation",
-    "section": "COVID in GA",
-    "text": "COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#covid-in-ga-1",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#covid-in-ga-1",
-    "title": "Misrepresentation",
-    "section": "COVID in GA",
-    "text": "COVID in GA\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#pp-services",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#pp-services",
-    "title": "Misrepresentation",
-    "section": "PP services",
-    "text": "PP services\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and dishonest chart. Vox. 29 September 2019."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#pp-services-1",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#pp-services-1",
-    "title": "Misrepresentation",
-    "section": "PP services",
-    "text": "PP services"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-map",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-map",
-    "title": "Misrepresentation",
-    "section": "Voting map",
-    "text": "Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#two-alternate-tales",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#two-alternate-tales",
-    "title": "Misrepresentation",
-    "section": "Two alternate tales",
-    "text": "Two alternate tales\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-percentages",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-percentages",
-    "title": "Misrepresentation",
-    "section": "Voting percentages",
-    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-percentages-1",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#voting-percentages-1",
-    "title": "Misrepresentation",
-    "section": "Voting percentages",
-    "text": "Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#catalan-independence",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#catalan-independence",
-    "title": "Misrepresentation",
-    "section": "Catalan independence",
-    "text": "Catalan independence\nOn December 19, 2014, the front page of Spanish national newspaper El País read “Catalan public opinion swings toward ‘no’ for independence, says survey”.\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. The truthful art: Data, charts, and maps for communication. New Riders, 2016."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#catalan-independence-1",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#catalan-independence-1",
-    "title": "Misrepresentation",
-    "section": "Catalan independence",
-    "text": "Catalan independence\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”, Power from Statistics: Data Information and Knowledge, 2017."
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#how-charts-lie",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#how-charts-lie",
-    "title": "Misrepresentation",
-    "section": "How Charts Lie",
-    "text": "How Charts Lie\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
-  },
-  {
-    "objectID": "slides/1-1-misrepresentation/1-1-misrepresentation.html#calling-bullshit",
-    "href": "slides/1-1-misrepresentation/1-1-misrepresentation.html#calling-bullshit",
-    "title": "Misrepresentation",
-    "section": "Calling Bullshit",
-    "text": "Calling Bullshit\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
   }
 ]
