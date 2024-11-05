@@ -370,6 +370,7 @@ Getting Smarter about Visual Information
 
 by Alberto Cairo
 :::
+
 ::: {.column width="35%"}
 ![](images/cairo-how-charts-lie.jpg){width="400"}
 :::
@@ -385,6 +386,7 @@ Data-Driven World
 
 by Carl Bergstrom and Jevin West
 :::
+
 ::: {.column width="35%"}
 ![](images/calling-bullshit.png){width="400"}
 :::

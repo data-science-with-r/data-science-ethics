@@ -1,13 +1,83 @@
-Hello, and welcome! My name is Mine Çetinkaya-Rundel, and I will be your instructor for the specialization titled Data Science with R. This is the third course in the series -- Data Science Ethics.
+In this video we're going to talk about misrepresentation of data and data science findings. Sometimes this is unintentional and sometimes it might be intentional. Throughout the examples we'll introduce in this video, I encourage you to think about whether the folks who created the misrepresentations may have done so intentionally or uninentionally.
 
->>> In the first course we introduced the data science cycle with this figure from the book R for Data Science.
+>>> Misrepresentation can happen in a variety of ways -- let's first overview the few we'll discuss in this video.
 
->>> In the second course we dove deeper into data data transformation, formally introduced data tidying via reshaping and joining data, and then took one more step back and learned to import datasets from CSV files and Excel spreadsheet as well as scraping unstructured data off the web and reorganizing them into data frames in R.
+>>> How might one misrepresent data science results?
 
->>> In this course we'll take a bit of a break from "how to do this task in R" and ask "should we do this task?" Specifically, we'll discuss topics in data science ethics such as
+> First, one might be misrepresenting their findings when they claiming causality where it’s not in the scope of inference of the underlying study, like when they really should only be talking about a correlation.
 
-> misrepresentation of data science results
-> data privacy, and
-> algorithmic bias
+> Next, distorting axes and scales can be a way to make the data tell a different story. This can happen from oversight, or from intentional manipulation.
 
-Let's get started!
+> Visualizing spatial areas instead of human density for issues that depend on and affect humans is another way we can create visualizations, in this case maps, that invoke a much different finding than the data support.
+
+> Finally, omitting uncertainty in reporting -- a mistake many who don't have proper background or consideration for statistics make -- can lead to misleading conclusions.
+
+>>> Let's start with causality.
+
+>>> Take a look at this coverage of a study on exercise and cancer risk in the Time magazine. How plausible is the statement in the title of this article -- Exercise can lower risk of some cancers by 20%. At a first glance, this might seem plausible. Exercise good, cancer bad. We often hear of exercise being associated with good health outcomes. And it's hard for us to judge how plausible that 20% estimate is -- but that's a pretty big effect!
+
+>>> Let's take a look at the coverage of the same article on the Los Angeles Times -- Exercising drives down risk for 13 cancers, "research shows". What does "research shows" mean in this context? It's a catch all phrase used all too commonly in coverage of research findings. But does it mean "reserch suggests"? "research proves"? It's unclear... It does give legitemacy to the preceding statement though!
+
+>>> Now, finally, let's look at the original study that is covered in these two popular media pieces. This study is titled "Association of Leisure-Time Physical Activity With Risk of 26 Types of Cancer in 1.44 Million Adults". First, huge sample size! But, remember, huge sample size doesn't imply causation. If we want to infer causation -- like exercise lowers risk of cancer -- we need a randomized controlled study, not an observational one.
+
+> In this study volunteers were asked about their physical activity level over the preceding year.
+
+> It was found, or observed, that half exercised less than about 150 minutes per week, half exercised more.
+
+> Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.
+
+> And Researchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).
+
+Compare this to the titles of the news pieces -- "Exercising drives down risk for 13 cancers" or "Exercise can lower risk of some cancers by 20%" sound a lot more definitive, and causal, than what the study states. Simplification of research findings can be good, and necessary, for popular media coverage. But examples like these where simplification, either accidentally or intentionally, resulting in causal language being inserted where not supported by the underlying study are unfortunately all too common.
+
+>>> Next, let's talk about misleading visualizations, particularly with reference to axes and scales.
+
+>>> Take a look a these two figures. It's from 2019, but the point still stands. Both show what would happen "now", or back in 2019, if Bush tax cuts expire. The difference between these two pictures is that in one the y-axis starts at 0, while in the other the y-axis starts right below what would happen at that time point. The change in tax cuts seems a lot more extreme in the plot where the y-axis doesn't start at 0 compared to the other one. 
+
+You'll find some data visualization purists who say every single axis must start at 0. I'm not one of them. But I do agree that that if the axis is not going to start at 0, there should be a very good reason and an acknowledgement of that in the plot.
+
+>>> Here is another one. I'll give you a moment to look at the plot carefully. What is wrong with this picture? And how would you correct it? [PAUSE]
+
+If you said the x-axis looks out of whack, you're right. The differences between last year, last week, and current should be be equal.
+
+>>> Here is what the same data look like on an axis with the correct scale. A MUCH different story!
+
+>>> And here is another one. Once again I'll give you a moment to look at the plot carefully. What is wrong with this picture? And how would you correct it? [PAUSE]
+
+And once again, if you said the x-axis looks out of whack, you're right. The dates are not in order! And it's so easy to miss if you're not looking carefully. These are COVID counts, from 2020, at the height of COVID concerns. So decreasing bars look good, until you realize they're not telling the story over time.
+
+>>> Here are the same counts, this time in chronological order. A MUCH different story, again!
+
+>>> And one more, looking at services provided by Planned Parenthood, showing increase in abortions provided and decrease in cancer screening and prevention services. nce again I'll give you a moment to look at the plot carefully. What is wrong with this picture? And how would you correct it?
+
+>>> Look at the same numbers on the correct scale. Yes, there is a decrease in cancer screening and prevention services, but this decrease is not overtaken by the number of abortions as all.
+
+Each of these were examples of misrepresenting results in visualizations. Our goal in this video is not to judge whether these are intentional or uninentional misrepresentations, but I hope we can all agree that it is possible, and not that easy to, tell a misleading story, even with the correct numbers, if axis and scales are chosen inappropriately.
+
+>>> Next, let's talk about how results can be misleading in maps, particularly maps that show areas.
+
+>>> Do you recognize this map? What does it show? I'll give you a moment to think about it. [PAUSE] Its a map of the United States, and the areas outlined are counties. There are about 3000 counties in the US. The colors indicate whether the majority vote in the county was expected to go to the republican presidential candidate (red) or democratic presidential candidate (blue) in the 2016 election.
+
+>>> And here is a book cover from those days -- titled Citizens for Trump, showintg that same map. It says "citizens" for Trump, but do the colors really indicate the county level vote.
+
+>>> In fact, if we were to look at the share of popular vote, the election results would look a lot different, as shown in the bar charts here.
+
+>>> We can think of other adjustments to the visualiation as well. We could color based on states. Or, even better, maybe, based on state size adjusted by electoral votes it contributes to the election. If you're not fmiliar with the US presidential elections, this metric might make no sense. And, even if you are, it's not an easy one to digest, even though it's a better representation.
+
+So, that's another fine line we need to walk when considering how to visualize data and make sure we're not misrepresenting the results -- simplicity vs. misleading.
+
+>>> Finally, let's touch on uncertainty.
+
+>>> Here is a summary from a survey finding from El Pais, a Spanish national newspaper, that shows the responses to a question that asked participants whether they want Catalonia to become an independent state. The yeses and no's are pretty close. Anf the newspaper headline read "Catalan public opinion swings toward ‘no’ for independence, says survey”. But note the margin of error at the botton of the plot. 2.95%.
+
+>>> If we take that into consideration, and mark the estimated proportions from the survey with the margin of error bounds around it, the picture is a lot different. And definitely not one we'd summarize as a "swing" from one response to another.
+
+>>> You've seen a few examples that will hopefully help you be critical of data science results you encounter in  the wild, and also, help you make the right decisions when making your own visualizations and summaries.
+
+If you're interested in seeing more examples, I highly recommend two books:
+
+>>> How Charts Lie by Alberto Cairo, where some of the examples I gave in this video come from
+
+>>> and Calling Bullshit by Carl Bergstron and Jevin West.
+
+They're both pretty informative and interesting reads, I hope you can find the time to dive into them!
