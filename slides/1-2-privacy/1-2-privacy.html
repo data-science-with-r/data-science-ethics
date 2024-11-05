@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.6.10">
 
   <meta name="author" content=" Data Science with R">
-  <title>Data science-ethics – Misrepresentation</title>
+  <title>Data science-ethics – Data privacy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Misrepresentation</h1>
+  <h1 class="title">Data privacy</h1>
   <p class="subtitle"><br><br> <i class="fa-solid fa-book-open" aria-label="book-open"></i> Data science ethics</p>
 
 <div class="quarto-title-authors">
@@ -340,250 +340,111 @@
 
 </section>
 <section>
-<section id="overview" class="title-slide slide level1 center">
-<h1>Overview</h1>
+<section id="your-data" class="title-slide slide level1 center">
+<h1>“Your” data</h1>
 
 </section>
-<section id="misrepresenting-data-science-results" class="slide level2">
-<h2>Misrepresenting data science results</h2>
-<p>Some common ways people do this, either intentionally or unintentionally, include:</p>
+<section id="your-data-1" class="slide level2">
+<h2>“Your” data</h2>
+<ul>
+<li><p>Every time we use apps, websites, and devices, our data is being collected and used or sold to others.</p></li>
+<li><p>More importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people.</p></li>
+</ul>
+</section>
+<section id="privacy-of-your-data" class="slide level2">
+<h2>Privacy of your data</h2>
+<div class="task">
+<p>What pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?</p>
+</div>
+</section>
+<section id="sharing-your-data" class="slide level2">
+<h2>Sharing your data</h2>
+<div class="task">
+<p>What are you OK with sharing?</p>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
 <div>
 <ul>
-<li class="fragment"><p>Claiming <strong>causality</strong> where it’s not in the scope of inference of the underlying study</p></li>
-<li class="fragment"><p>Distorting <strong>axes and scales</strong> to make the data tell a different story</p></li>
-<li class="fragment"><p>Visualizing <strong>spatial areas instead of human density</strong> for issues that depend on and affect humans</p></li>
-<li class="fragment"><p>Omitting <strong>uncertainty</strong> in reporting</p></li>
+<li class="fragment">Name</li>
+<li class="fragment">Age</li>
+<li class="fragment">Email</li>
+<li class="fragment">Phone Number</li>
+<li class="fragment">List of every video you watch</li>
+<li class="fragment">List of every video you comment on</li>
+<li class="fragment">How you type: speed, accuracy</li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<div>
+<ul>
+<li class="fragment">How long you spend on different content</li>
+<li class="fragment">List of all your private messages (date, time, person sent to)</li>
+<li class="fragment">Info about your photos (how it was taken, where it was taken (GPS), when it was taken)</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="what-does-google-thinkknow-about-you" class="slide level2">
+<h2>What does Google think/know about you?</h2>
+<div class="task">
+<p>Have you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized.</p>
+</div>
+</section>
+<section id="your-browsing-history" class="slide level2">
+<h2>Your browsing history</h2>
+<div class="task">
+<p>Which of the following are you OK with your browsing history to be used towards?</p>
+</div>
+<div>
+<ul>
+<li class="fragment">For serving you targeted ads</li>
+<li class="fragment">To score you as a candidate for a job</li>
+<li class="fragment">To predict your race/ethnicity for voting purposes</li>
+</ul>
+</div>
+</section>
+<section id="who-else-gets-to-use-your-data" class="slide level2">
+<h2>Who else gets to use your data?</h2>
+<div class="task">
+<p>Suppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?</p>
+</div>
+<div>
+<ul>
+<li class="fragment">Companies the social media company has a connection to?</li>
+<li class="fragment">Companies the social media company sells your data to?</li>
+<li class="fragment">Researchers?</li>
 </ul>
 </div>
 </section></section>
 <section>
-<section id="causality" class="title-slide slide level1 center">
-<h1>Causality</h1>
+<section id="case-study-ok-cupid" class="title-slide slide level1 center">
+<h1>Case study: OK Cupid</h1>
 
 </section>
-<section id="time-coverage" class="slide level2">
-<h2>TIME coverage</h2>
-<div class="task">
-<p>How plausible is the statement in the title of this article?</p>
-</div>
-<p><img data-src="images/exercise-cancer-time.png"></p>
-
-<aside><div>
-<p>Alice Park. <a href="https://time.com/4330041/reduce-cancer-risk-exercise/">Exercise Can Lower Risk of Some Cancers By 20%</a>. Time Magazine. 16 May 2016.</p>
-</div></aside></section>
-<section id="la-times-coverage" class="slide level2">
-<h2>LA Times coverage</h2>
-<div class="task">
-<p>What does “research shows” mean?</p>
-</div>
-<p><img data-src="images/exercise-cancer-latimes.png"></p>
-
-<aside><div>
-<p>Melissa Healy. <a href="https://www.latimes.com/science/sciencenow/la-sci-sn-exercising-cancer-20160516-story.html">Exercising drives down risk for 13 cancers, research shows</a>.<br>
-Los Angeles Times. 16 May 2016.</p>
-</div></aside></section>
-<section id="original-study" class="slide level2">
-<h2>Original study</h2>
-<p>Moore, Steven C., et al.&nbsp;<a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826"><strong>“Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.”</strong></a> JAMA internal medicine 176.6 (2016): 816-825.</p>
+<section id="ok-cupid-data-breach" class="slide level2">
+<h2>OK Cupid data breach</h2>
 <ul>
-<li><strong>Volunteers</strong> were <strong>asked</strong> about their physical activity level over the preceding year.</li>
-<li>Half exercised less than about 150 minutes per week, half exercised more.</li>
-<li>Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.</li>
-<li>Researchers found no association between exercising and 13 other cancers (e.g.&nbsp;pancreatic, ovarian, and brain).</li>
+<li><p>In 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details</p></li>
+<li><p>Researchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g.&nbsp;usernames</p></li>
 </ul>
-<aside class="notes">
-<p>Carl Bergstrom and Jevin West. <a href="https://www.callingbullshit.org/">Calling Bullshit: The art of skepticism in a data-driven world</a>.<br>
-Random House, 2020.<br>
-Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-cancer/">“Does exercise prevent cancer?”</a>. StatNews. 16 May 2016.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="axes-and-scales" class="title-slide slide level1 center">
-<h1>Axes and scales</h1>
-
 </section>
-<section id="tax-cuts" class="slide level2">
-<h2>Tax cuts</h2>
+<section id="ok-cupid-data-breach-1" class="slide level2">
+<h2>OK Cupid data breach</h2>
+<p><img data-src="images/okcupid-tweet.png"></p>
+</section>
+<section id="ok-cupid-data-breach-2" class="slide level2">
+<h2>OK Cupid data breach</h2>
+<blockquote>
+<p>Some may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.</p>
+<p>Researchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær</p>
+</blockquote>
+</section>
+<section id="data-privacy" class="slide level2">
+<h2>Data privacy</h2>
 <div class="task">
-<p>What is the difference between these two pictures? Which presents a better way to represent these data?</p>
+<p>In analysis of data that individuals willingly shared publicly on a given platform (e.g.&nbsp;social media), how do you make sure you don’t violate reasonable expectations of privacy?</p>
 </div>
-<p><img data-src="images/axis-start-at-0.png"></p>
-
-<aside><div>
-<p>Christopher Ingraham. <a href="https://www.washingtonpost.com/business/2019/10/14/youve-been-reading-charts-wrong-heres-how-pro-does-it/">“You’ve been reading charts wrong. Here’s how a pro does it.”</a>. The Washington Post. 14 October 2019.</p>
-</div></aside></section>
-<section id="cost-of-gas" class="slide level2">
-<h2>Cost of gas</h2>
-<div class="task">
-<p>What is wrong with this picture? How would you correct it?</p>
-</div>
-<p><img data-src="images/cost-of-gas.png"></p>
-</section>
-<section id="cost-of-gas-1" class="slide level2">
-<h2>Cost of gas</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="1-2-misrepresentation_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="covid-in-ga" class="slide level2">
-<h2>COVID in GA</h2>
-<div class="task">
-<p>What is wrong with this picture? How would you correct it?</p>
-</div>
-<p><img data-src="images/ga-dph-declining-bars.jpg" width="900"></p>
-
-<aside><div>
-<p>Georgia Department of Public Health. 11 May 2020.</p>
-</div></aside></section>
-<section id="covid-in-ga-1" class="slide level2">
-<h2>COVID in GA</h2>
-<p><img data-src="images/ga-dph-corrected-bars.png"></p>
-
-<aside><div>
-<p>Lucy D’Agostino McGowan. <a href="https://livefreeordichotomize.com/posts/2020-05-17-graph-detective/">Graph detective</a>. Live Free or Dichotomize. 17 May 2020.</p>
-</div></aside></section>
-<section id="pp-services" class="slide level2">
-<h2>PP services</h2>
-<div class="task">
-<p>What is wrong with this picture? How would you correct it?</p>
-</div>
-<p><img data-src="images/pp-misleading.png" width="650"></p>
-
-<aside><div>
-<p>Timothy B. Lee. <a href="https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart">Whatever you think of Planned Parenthood, this is a terrible and dishonest chart</a>. Vox. 29 September 2019.</p>
-</div></aside></section>
-<section id="pp-services-1" class="slide level2 scrollable">
-<h2>PP services</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="1-2-misrepresentation_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="maps-and-areas" class="title-slide slide level1 center">
-<h1>Maps and areas</h1>
-
-</section>
-<section id="voting-map" class="slide level2">
-<h2>Voting map</h2>
-<div class="task">
-<p>Do you recognize this map? What does it show?</p>
-</div>
-<p><img data-src="images/election-2016-county.png" width="801"></p>
-
-<aside><div>
-<p>Lazaro Gamio. <a href="https://www.washingtonpost.com/graphics/politics/2016-election/how-election-maps-lie/">“Election maps are telling you big lies about small things”</a>. The Washington Post. 1 Nov 2016.</p>
-</div></aside></section>
-<section id="two-alternate-tales" class="slide level2">
-<h2>Two alternate tales</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="images/citizens-for-trump.png" width="350"></p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="images/counties-for-trump.png" width="350"></p>
-</div></div>
-
-<aside><div>
-<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
-</div></aside></section>
-<section id="voting-percentages" class="slide level2">
-<h2>Voting percentages</h2>
-<p><img data-src="images/cairo-vote-percentages.png" width="950"></p>
-
-<aside><div>
-<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
-</div></aside></section>
-<section id="voting-percentages-1" class="slide level2">
-<h2>Voting percentages</h2>
-<p><img data-src="images/cairo-what-matters.png"></p>
-
-<aside><div>
-<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
-</div></aside></section></section>
-<section>
-<section id="uncertainty" class="title-slide slide level1 center">
-<h1>Uncertainty</h1>
-
-</section>
-<section id="catalan-independence" class="slide level2">
-<h2>Catalan independence</h2>
-<p>On December 19, 2014, the front page of Spanish national newspaper El País read <em>“Catalan public opinion swings toward ‘no’ for independence, says survey”</em>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="1-2-misrepresentation_files/figure-revealjs/catalan-misleading-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>Alberto Cairo. <a href="http://www.thefunctionalart.com/p/the-truthful-art-book.html">The truthful art: Data, charts, and maps for communication</a>. New Riders, 2016.</p>
-</div></aside></section>
-<section id="catalan-independence-1" class="slide level2">
-<h2>Catalan independence</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="1-2-misrepresentation_files/figure-revealjs/catalan-corrected-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>Alberto Cairo. <a href="https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf">“Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”</a>, Power from Statistics: Data Information and Knowledge, 2017.</p>
-</div></aside></section></section>
-<section>
-<section id="further-reading" class="title-slide slide level1 center">
-<h1>Further reading</h1>
-
-</section>
-<section id="how-charts-lie" class="slide level2">
-<h2>How Charts Lie</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="images/cairo-how-charts-lie.jpg" width="400"></p>
-</div><div class="column" style="width:30%;">
-<p><a href="http://www.thefunctionalart.com/p/reviews.html">How Charts Lie</a></p>
-<p>Getting Smarter about Visual Information</p>
-<p>by Alberto Cairo</p>
-</div></div>
-</section>
-<section id="calling-bullshit" class="slide level2">
-<h2>Calling Bullshit</h2>
-<div class="columns">
-<div class="column">
-<p><img data-src="images/calling-bullshit.png" width="400"></p>
-</div><div class="column">
-<p><a href="https://www.callingbullshit.org/">Calling Bullshit</a><br>
-The Art of Skepticism in a<br>
-Data-Driven World</p>
-<p>by Carl Bergstrom and Jevin West</p>
-</div></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -801,44 +662,6 @@ Data-Driven World</p>
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
