@@ -1,0 +1,393 @@
+---
+title: "Misrepresentation"
+format: revealjs
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+library(tidyverse)
+library(scales)
+```
+
+# Overview
+
+## Misrepresenting data science results
+
+Some common ways people do this, either intentionally or unintentionally, include:
+
+::: incremental
+-   Claiming **causality** where it's not in the scope of inference of the underlying study
+
+-   Distorting **axes and scales** to make the data tell a different story
+
+-   Visualizing **spatial areas instead of human density** for issues that depend on and affect humans
+
+-   Omitting **uncertainty** in reporting
+:::
+
+# Causality
+
+## TIME coverage
+
+::: task
+How plausible is the statement in the title of this article?
+:::
+
+![](images/exercise-cancer-time.png)
+
+::: aside
+Alice Park.
+[Exercise Can Lower Risk of Some Cancers By 20%](https://time.com/4330041/reduce-cancer-risk-exercise/).
+Time Magazine.
+16 May 2016.
+:::
+
+## LA Times coverage
+
+::: task
+What does "research shows" mean?
+:::
+
+![](images/exercise-cancer-latimes.png)
+
+::: aside
+Melissa Healy.
+[Exercising drives down risk for 13 cancers, research shows](https://www.latimes.com/science/sciencenow/la-sci-sn-exercising-cancer-20160516-story.html).\
+Los Angeles Times.
+16 May 2016.
+:::
+
+## Original study
+
+Moore, Steven C., et al. [**"Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults."**](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826) JAMA internal medicine 176.6 (2016): 816-825.
+
+-   **Volunteers** were **asked** about their physical activity level over the preceding year.
+-   Half exercised less than about 150 minutes per week, half exercised more.
+-   Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.
+-   Researchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).
+
+::: notes
+Carl Bergstrom and Jevin West.
+[Calling Bullshit: The art of skepticism in a data-driven world](https://www.callingbullshit.org/).\
+Random House, 2020.\
+Sharon Begley.
+["Does exercise prevent cancer?"](https://www.statnews.com/2016/05/16/exercise-prevent-cancer/).
+StatNews.
+16 May 2016.
+:::
+
+# Axes and scales
+
+## Tax cuts
+
+::: task
+What is the difference between these two pictures?
+Which presents a better way to represent these data?
+:::
+
+![](images/axis-start-at-0.png)
+
+::: aside
+Christopher Ingraham.
+["You’ve been reading charts wrong. Here’s how a pro does it."](https://www.washingtonpost.com/business/2019/10/14/youve-been-reading-charts-wrong-heres-how-pro-does-it/).
+The Washington Post.
+14 October 2019.
+:::
+
+## Cost of gas
+
+::: task
+What is wrong with this picture?
+How would you correct it?
+:::
+
+![](images/cost-of-gas.png)
+
+## Cost of gas
+
+```{r}
+#| out-width: 100%
+#| echo: false
+df <- tibble(
+  date = ymd(c("2019-11-01", "2020-10-25", "2020-11-01")),
+  cost = c(3.17, 3.51, 3.57)
+)
+ggplot(df, aes(x = date, y = cost, group = 1)) +
+  geom_point() +
+  geom_line() +
+  geom_label(aes(label = cost), hjust = -0.25) +
+  labs(
+    title = "Cost of gas",
+    subtitle = "National average",
+    x = NULL, y = NULL, 
+    caption = "Source: AAA Fuel Gauge Report"
+  ) +
+  scale_x_continuous(
+    breaks = ymd(c("2019-11-01", "2020-10-25", "2020-11-01")), 
+    labels = c("Last year", "Last week", "Current"),
+    guide = guide_axis(angle = 90),
+    limits = ymd(c("2019-11-01", "2020-11-29")),
+    minor_breaks = ymd(c("2019-11-01", "2020-10-25", "2020-11-01"))
+  ) +
+  scale_y_continuous(labels = label_dollar())
+```
+
+## COVID in GA
+
+::: task
+What is wrong with this picture?
+How would you correct it?
+:::
+
+![](images/ga-dph-declining-bars.jpg){width="900"}
+
+::: aside
+Georgia Department of Public Health.
+11 May 2020.
+:::
+
+## COVID in GA
+
+![](images/ga-dph-corrected-bars.png)
+
+::: aside
+Lucy D'Agostino McGowan.
+[Graph detective](https://livefreeordichotomize.com/posts/2020-05-17-graph-detective/).
+Live Free or Dichotomize.
+17 May 2020.
+:::
+
+## PP services
+
+::: task
+What is wrong with this picture?
+How would you correct it?
+:::
+
+![](images/pp-misleading.png){width="650"}
+
+::: aside
+Timothy B. Lee.
+[Whatever you think of Planned Parenthood, this is a terrible and dishonest chart](https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart).
+Vox.
+29 September 2019.
+:::
+
+## PP services {.scrollable}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+pp <- tibble(
+  year = c(2006, 2006, 2013, 2013),
+  service = c("Abortion", "Cancer", "Abortion", "Cancer"),
+  n = c(289750, 2007371, 327000, 935573)
+)
+
+ggplot(pp, aes(x = year, y = n, color = service)) +
+  geom_point(size = 2) +
+  geom_line(linewidth = 1) +
+  geom_text(aes(label = n), nudge_y = 100000) +
+  geom_text(
+    aes(label = year), 
+    nudge_y = 200000, 
+    color = "darkgray"
+  ) +
+  labs(
+    title = "Services provided by Planned Parenthood",
+    caption = "Source: Planned Parenthood",
+    x = NULL,
+    y = NULL
+  ) +
+  scale_x_continuous(breaks = c(2006, 2013)) +
+  scale_y_continuous(labels = label_number(big.mark = ",")) +
+  scale_color_manual(values = c("red", "purple")) +
+  annotate(
+    geom = "text",
+    label = "Abortions",
+    x = 2009.5,
+    y = 400000,
+    color = "red"
+  ) +
+  annotate(
+    geom = "text",
+    label = "Cancer screening\nand prevention services",
+    x = 2011,
+    y = 1600000, 
+    color = "purple"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  coord_cartesian(clip = "off")
+```
+
+# Maps and areas
+
+## Voting map
+
+::: task
+Do you recognize this map?
+What does it show?
+:::
+
+![](images/election-2016-county.png){width="801"}
+
+::: aside
+Lazaro Gamio.
+["Election maps are telling you big lies about small things"](https://www.washingtonpost.com/graphics/politics/2016-election/how-election-maps-lie/).
+The Washington Post.
+1 Nov 2016.
+:::
+
+## Two alternate tales
+
+::::: columns
+::: {.column width="30%"}
+![](images/citizens-for-trump.png){width="350"}
+:::
+
+::: {.column width="30%"}
+![](images/counties-for-trump.png){width="350"}
+:::
+:::::
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+## Voting percentages
+
+![](images/cairo-vote-percentages.png){width="950"}
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+## Voting percentages
+
+![](images/cairo-what-matters.png)
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+# Uncertainty
+
+## Catalan independence
+
+On December 19, 2014, the front page of Spanish national newspaper El País read *"Catalan public opinion swings toward 'no' for independence, says survey"*.
+
+```{r}
+#| label: catalan-misleading
+#| echo: false
+#| fig-asp: 0.4
+#| out-width: 100%
+catalan <- tibble(
+  response = c("No", "Yes", "No answer"),
+  rate     = c(45.3, 44.5, 10.2)
+) |>
+  mutate(response = fct_relevel(response, "No", "Yes", "No answer"))
+
+ggplot(catalan, aes(y = fct_rev(response), x = rate, color = response, group = response)) +
+  geom_point(size = 3) +
+  geom_segment(
+    aes(
+      x = 0, xend = rate,
+      y = fct_rev(response), yend = fct_rev(response)
+    ),
+    linewidth = 2
+  ) +
+  scale_color_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
+  scale_x_continuous(labels = label_percent(scale = 1)) +
+  guides(color = "none") +
+  theme_minimal(base_size = 15) +
+  labs(
+    title = "Do you want Catalonia to become an\nindependent state?",
+    caption = "Margin of error: +/-2.95% at 95% confidence level",
+    x = NULL, y = NULL
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+::: aside
+Alberto Cairo.
+[The truthful art: Data, charts, and maps for communication](http://www.thefunctionalart.com/p/the-truthful-art-book.html).
+New Riders, 2016.
+:::
+
+## Catalan independence
+
+```{r}
+#| label: catalan-corrected
+#| echo: false
+#| out-width: 100%
+#| fig-asp: 0.4
+catalan <- catalan |>
+  mutate(
+    low = rate - 2.95,
+    high = rate + 2.95
+  )
+ggplot(catalan, aes(y = fct_rev(response), x = rate, color = response, group = response)) +
+  geom_segment(
+    aes(
+      x = low, xend = high,
+      y = fct_rev(response), 
+      yend = fct_rev(response)
+    ),
+    linewidth = 0.8, color = "black"
+  ) +
+  geom_point(size = 4) +
+  scale_color_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
+  scale_x_continuous(labels = label_percent(scale = 1)) +
+  guides(color = "none") +
+  theme_minimal(base_size = 15) +
+  labs(
+    title = "Do you want Catalonia to become an\nindependent state?",
+    caption = "The probability of the tiny difference between the\n'No' and 'Yes' being just due to random chance is very high.",
+    x = NULL, y = NULL
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+::: aside
+Alberto Cairo.
+["Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?"](https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf), Power from Statistics: Data Information and Knowledge, 2017.
+:::
+
+# Further reading
+
+## How Charts Lie
+
+::::: columns
+::: {.column width="30%"}
+![](images/cairo-how-charts-lie.jpg){width="400"}
+:::
+
+::: {.column width="30%"}
+[How Charts Lie](http://www.thefunctionalart.com/p/reviews.html)
+
+Getting Smarter about Visual Information
+
+by Alberto Cairo
+:::
+:::::
+
+## Calling Bullshit
+
+::::: columns
+::: column
+![](images/calling-bullshit.png){width="400"}
+:::
+
+::: column
+[Calling Bullshit](https://www.callingbullshit.org/)\
+The Art of Skepticism in a\
+Data-Driven World
+
+by Carl Bergstrom and Jevin West
+:::
+:::::
