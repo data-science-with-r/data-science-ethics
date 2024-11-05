@@ -1,0 +1,13 @@
+Hello, and welcome! My name is Mine Çetinkaya-Rundel, and I will be your instructor for the specialization titled Data Science with R. This is the third course in the series -- Data Science Ethics.
+
+>>> In the first course we introduced the data science cycle with this figure from the book R for Data Science.
+
+>>> In the second course we dove deeper into data data transformation, formally introduced data tidying via reshaping and joining data, and then took one more step back and learned to import datasets from CSV files and Excel spreadsheet as well as scraping unstructured data off the web and reorganizing them into data frames in R.
+
+>>> In this course we'll take a bit of a break from "how to do this task in R" and ask "should we do this task?" Specifically, we'll discuss topics in data science ethics such as
+
+> misrepresentation of data science results
+> data privacy, and
+> algorithmic bias
+
+Let's get started!

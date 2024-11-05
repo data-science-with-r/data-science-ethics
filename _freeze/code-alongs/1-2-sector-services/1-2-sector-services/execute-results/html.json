@@ -1,0 +1,17 @@
+{
+  "hash": "e8343a9ce5d2f49a06fc73251f41dd46",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Sector and services\"\n---\n\n\n\n\n# Introduction\n\n## Goal\n\nThe following chart was [shared](https://x.com/GraphCrimes/status/1566264004288331776) by @GraphCrimes on X/Twitter on September 3, 2022.\n\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them.\n\n![](https://data-science-with-r.github.io/images/sector-services.png){fig-alt=\"Segmented bar char of sector and services.\" fig-align=\"center\"}\n\n## Packages\n\nWe will use the **tidyverse** package for data wrangling and visualization.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n\n## Data\n\nThese data come from [Survation](https://www.survation.com/) and were recreated from the percentages noted on the segmented bar chart above.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsurvation <- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n```\n:::\n\n\n\n\nLet's take a look at the data.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsurvation\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   <dbl> <chr>         <chr>         <chr>         <chr>        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows\n```\n\n\n:::\n:::\n\n\n\n\n# Analysis\n\n## Critique\n\nWhat is misleading about this graph?\n\nAdd response here.\n\n## Recreate and improve\n\n-   Confirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n\n-   Create an improved version of the visualization. Your improved visualization:\n\n- should also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (`gray`, `#FF3205`, and `#006697`) and appear in the same order as the original plot\n\n- should have the same legend location\n\n- should have the same title and caption\n\n- does not need to have a bolded title or a gray background\n\n- does not need to show percentages in the segments\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n\n-   How does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nAdd response here.\n",
+    "supporting": [
+      "1-2-sector-services_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
