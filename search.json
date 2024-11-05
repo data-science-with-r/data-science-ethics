@@ -25,7 +25,7 @@
     "href": "slides/1-2-misrepresentation/1-2-misrepresentation.html#original-study",
     "title": "Misrepresentation",
     "section": "Original study",
-    "text": "Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
+    "text": "Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\n\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
   },
   {
     "objectID": "slides/1-2-misrepresentation/1-2-misrepresentation.html#tax-cuts",
@@ -215,13 +215,6 @@
     "title": "Algorithmic bias",
     "section": "wru package",
     "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n      surname    pred.whi    pred.bla     pred.his\n1      Khanna 0.045110474 0.003067623 0.0068522723\n2        Imai 0.052645440 0.001334812 0.0558160072\n3      Rivera 0.043285692 0.008204605 0.9136195794\n4     Fifield 0.895405704 0.001911388 0.0337464844\n5        Zhou 0.006572555 0.001298962 0.0005388581\n6    Ratkovic 0.861236727 0.008212824 0.0095395642\n7     Johnson 0.543815322 0.344128607 0.0272403940\n8       Lopez 0.038939877 0.004920643 0.9318797791\n10 Wantchekon 0.330697188 0.194700665 0.4042849478\n9       Morse 0.866360147 0.044429853 0.0246568086\n      pred.asi    pred.oth\n1  0.860411906 0.084557725\n2  0.719376581 0.170827160\n3  0.024316883 0.010573240\n4  0.011079323 0.057857101\n5  0.982365594 0.009224032\n6  0.011334635 0.109676251\n7  0.007405765 0.077409913\n8  0.012154125 0.012105576\n10 0.021379541 0.048937658\n9  0.010219712 0.054333479"
-  },
-  {
-    "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-2",
-    "href": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#wru-package-2",
-    "title": "Algorithmic bias",
-    "section": "wru package",
-    "text": "wru package\n\nme &lt;- tibble(surname = \"Çetinkaya-Rundel\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n           surname  pred.whi pred.bla pred.his pred.asi\n1 Çetinkaya-Rundel 0.9177967        0        0        0\n    pred.oth\n1 0.08220329"
   },
   {
     "objectID": "slides/1-4-algorithmic-bias/1-4-algorithmic-bias.html#machine-bias",
