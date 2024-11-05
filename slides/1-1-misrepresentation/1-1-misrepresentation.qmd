@@ -363,31 +363,29 @@ Alberto Cairo.
 ## How Charts Lie
 
 ::::: columns
-::: {.column width="30%"}
-![](images/cairo-how-charts-lie.jpg){width="400"}
-:::
-
-::: {.column width="30%"}
+::: {.column width="35%"}
 [How Charts Lie](http://www.thefunctionalart.com/p/reviews.html)
 
 Getting Smarter about Visual Information
 
 by Alberto Cairo
 :::
+::: {.column width="35%"}
+![](images/cairo-how-charts-lie.jpg){width="400"}
+:::
 :::::
 
 ## Calling Bullshit
 
 ::::: columns
-::: column
-![](images/calling-bullshit.png){width="400"}
-:::
-
-::: column
+::: {.column width="35%"}
 [Calling Bullshit](https://www.callingbullshit.org/)\
 The Art of Skepticism in a\
 Data-Driven World
 
 by Carl Bergstrom and Jevin West
+:::
+::: {.column width="35%"}
+![](images/calling-bullshit.png){width="400"}
 :::
 :::::
