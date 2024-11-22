@@ -252,32 +252,95 @@
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\n\n\n\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": " Data science ethics",
+    "objectID": "exercises/covid.html",
+    "href": "exercises/covid.html",
+    "title": "Misleading Data Visualizations",
     "section": "",
-    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
+    "text": "Programming exercises are designed to provide an opportunity for you to put what you learn in the videos and readings. These exercises feature interactive code chunks using a tool called WebR, which allow you to write, edit, and run R code without leaving your browser.\nWhen the ▶️ Run Code button turns to a solid color, you can interact with the code chunks!\nWe invite you to think critically about the ethics questions associated with each graph before opening the solution box so you get the most out of this exercise."
   },
   {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": " Data science ethics",
+    "objectID": "exercises/covid.html#packages",
+    "href": "exercises/covid.html#packages",
+    "title": "Misleading Data Visualizations",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(ggridges)"
+  },
+  {
+    "objectID": "exercises/covid.html#motivation",
+    "href": "exercises/covid.html#motivation",
+    "title": "Misleading Data Visualizations",
+    "section": "Motivation",
+    "text": "Motivation\nData visualization is a powerful tool used to help a general audience synthesize complex data into a message that is understandable. However, data visualizations that are intentionally or unintentionally misleading can lead an audience to conclusions that are nothing more than fabrications of the truth.\nIn this programming exercise, we are going to visit data from the Covid-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved."
+  },
+  {
+    "objectID": "exercises/covid.html#kansas-covid",
+    "href": "exercises/covid.html#kansas-covid",
+    "title": "Misleading Data Visualizations",
+    "section": "Kansas Covid",
+    "text": "Kansas Covid\n“On August 6, 2020, Rachel Maddow of MSNBC tweeted “Chart: Kansas mask counties versus no-mask mandate counties” (Maddow 2020, August 6) along with a link to a plot (see figure below) created by the Kansas Department of Health and Environment—which was also shared live on The Rachel Maddow Show that same day. The plot compared the number of COVID-19 cases over time for counties in Kansas that had mask mandates versus those that did not” (Engledowl and Weiland 2021)\nThe data used to create the data visualization can be read in (to be used later), and seen below by running the following code.\n\n\n\n\n\n\n\n\n\nWhat is misleading about this graph? Why might it be misleading?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThere are two different y-axes. One on the left for the counties with the mask mandate, and one on the right for the counties without a mask mandate. This may be misleading, as someone may not see the additional y-axis on the right side of the graph; line graphs typically do not have two different y-axes.\n\n\n\nWhat trend in these data might someone conclude because of the misleading visualization?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nBased on the misleading visualization, one could come to the conclusion that, the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased to a lower value for masked counties than for counties that did not have the mask mandate"
+  },
+  {
+    "objectID": "exercises/covid.html#fixing-the-graph",
+    "href": "exercises/covid.html#fixing-the-graph",
+    "title": "Misleading Data Visualizations",
+    "section": "Fixing the graph",
+    "text": "Fixing the graph\nNow that we have identified how this graph is misleading, let’s create our own graph that fixes the issue! The first thing we need to do is think about the structure of our data. As seen above, our three column names are date, mask mandate, and no-mask mandate. How do the structure of these data need to change in order for us to plot these data?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe values of mask mandate and no-mask mandate need to be levels of a categorical variable that we can map to the visual element (lines) on our plot. In the following code below, we name this variable County.\n\nkansas_covid |&gt;\n  pivot_longer(!date, names_to = \"County\" , values_to = \"cases\") \n\n# A tibble: 46 × 3\n   date      County          cases\n   &lt;chr&gt;     &lt;chr&gt;           &lt;dbl&gt;\n 1 7/12/2020 mask mandate     25.2\n 2 7/12/2020 no-mask mandate   9.8\n 3 7/13/2020 mask mandate     19.7\n 4 7/13/2020 no-mask mandate   9.2\n 5 7/14/2020 mask mandate     19.7\n 6 7/14/2020 no-mask mandate   9.4\n 7 7/15/2020 mask mandate     20.4\n 8 7/15/2020 no-mask mandate   9.8\n 9 7/16/2020 mask mandate     19.7\n10 7/16/2020 no-mask mandate   9.9\n# ℹ 36 more rows\n\n\n\n\n\nNow that our data is in the correct format (note that we also changed our date variable to be in the format of month, day, year), we are going to use ggplot(), and the appropriate geom function to make our new graph. Please see the Function Reference for the different types of geoms we can use. Add the appropriate geom to the plot below to make a line graph.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWe can use geom_line() to create a line graph!\n\nkansas_covid |&gt;\n  pivot_longer(!date, names_to = \"County\" , values_to = \"cases\") |&gt;\n  mutate(date = as.Date(date, format = \"%m/%d/%Y\")) |&gt;\n  ggplot(\n    aes(x = date , y = cases , color = County)\n  ) +\n  geom_line()\n\n\n\n\n\n\n\n\n\n\n\nUsing our new graph, what proper conclusion can we make?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nBased on our new graph, we can see the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased for the mask mandated counties, and stayed relatively consistent for the non-masked mandated counties. We can also see that within this date range, the non-mask mandated counties had a lower rolling average per/100k than masked mandated counties.\n\n\n\nWe can add the following lines of code to make the graph even more effective. We are using scale_color_manual() to change the colors of the line associated with the County variable; scale_x_date()to add date labels to the x-axis; theme()to change the angle of the x-axis and the position of the legend; and labs() to add a title!"
+  },
+  {
+    "objectID": "exercises/covid.html#georgia-covid",
+    "href": "exercises/covid.html#georgia-covid",
+    "title": "Misleading Data Visualizations",
+    "section": "Georgia Covid",
+    "text": "Georgia Covid\nGeorgia DPH temporarily published the following graph on the COVID-19 Daily Status Report. The data and associated plot can be found below. These data are pulled from the NY Times.\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is misleading about this graph? Why might it be misleading?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe dates on the x-axis are not in chronological order. This is extremely misleading, and a general audience is going to assume a correct chronological order to the dates from left to right. Further, the order of the counties within date are sorted from highest to lowest, making cross date comparison more difficult for each county. One strategy we can use in R is to manually set the dates in chronological order using the levels argument in the factor() function when manipulating the date variable in our data set using mutate().\n\ngeorgia_covid |&gt;\n  filter(date &gt;= \"2020-04-26\", date &lt;= \"2020-05-09\") %&gt;%\n  mutate(\n    date = format(date, \"%d%b%Y\"), \n    date = factor(date,\n                  levels = c(\"26Apr2020\", \"27Apr2020\", \"28Apr2020\", \n                             \"29Apr2020\", \"30Apr2020\", \"01May2020\", \n                             \"02May2020\", \"03May2020\", \"04May2020\",\n                             \"05May2020\", \"06May2020\", \"07May2020\", \n                             \"08May2020\", \"09May2020\")))\n\n# A tibble: 70 × 7\n   date      county   state    fips cases deaths  case\n   &lt;fct&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1 26Apr2020 Cobb     Georgia 13067  1428     75    33\n 2 26Apr2020 DeKalb   Georgia 13089  1800     36    12\n 3 26Apr2020 Fulton   Georgia 13121  2545     94     2\n 4 26Apr2020 Gwinnett Georgia 13135  1504     47    44\n 5 26Apr2020 Hall     Georgia 13139  1033     11     1\n 6 27Apr2020 Cobb     Georgia 13067  1483     81    55\n 7 27Apr2020 DeKalb   Georgia 13089  1855     42    55\n 8 27Apr2020 Fulton   Georgia 13121  2680    103   135\n 9 27Apr2020 Gwinnett Georgia 13135  1545     52    41\n10 27Apr2020 Hall     Georgia 13139  1098     12    65\n# ℹ 60 more rows\n\n\nDates on our plot will appear in the order we set!\n\n\n\nWhat trend in these data might someone conclude because of the misleading visualization?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nBased on the misleading visualization, one could come to the conclusion that the trend of Covid-19 cases across these five counties are significantly decreasing each day."
+  },
+  {
+    "objectID": "exercises/covid.html#fixing-the-graph-1",
+    "href": "exercises/covid.html#fixing-the-graph-1",
+    "title": "Misleading Data Visualizations",
+    "section": "Fixing the graph",
+    "text": "Fixing the graph\nWe can use the following code to help make their plot less misleading. We will not sort the levels of county within each date to be in descending order, to make comparisons easier. The function geom_col() is used to re-create the barplot. The functions theme(), scale_x_discrete(), and scale_fill_manual() are used to help recreate some of the visual features of the plot above.\n\n\n\n\n\n\n\n\nUsing our new graph, what proper conclusion can we make about the trend of casses across the five counties?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nBased on the less misleading graph, we can see that the overall trend of cases across the five counties may have gone down, but the rate in which they went down depends on the county. Further, some counties (ex. Hall) show a more cyclic pattern than an overall downward trend.\n\n\n\nWhat are some of your overall takeaways after working with these two misleading graphs?\n\n\n\n\n\n\nTakeaways\n\n\n\n\n\n– We digest information from graphs very quickly. If data are misrepresented, it may not be initially obvious, leading to some making incorrect conclusions.\n– Data cane be manipulated based on their axes. If you are creating / consuming graphed information, it’s important to be cognizant of the scale and order in which information on the axes are in.\n– Plotting data in a unfamiliar way (ex. having two y-axes) can be misleading, instead of a helpful comparison tool. As a researcher, think critically about how your audience is going scan your visualization."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
+    "title": "Sector and services (Complete)",
     "section": "",
-    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them.\n\n\n\n\n\n\n\n\nWe will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)\n\n\n\n\nThese data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
   },
   {
-    "objectID": "index.html#code-alongs",
-    "href": "index.html#code-alongs",
-    "title": " Data science ethics",
-    "section": "Code alongs",
-    "text": "Code alongs\n\n\n\n\n\nTitle\n\n\n\n\n\n\nSector and services (Complete)\n\n\n\n\nSector and services\n\n\n\n\n\nNo matching items"
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them."
   },
   {
-    "objectID": "index.html#exercises",
-    "href": "index.html#exercises",
-    "title": " Data science ethics",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "We will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
+    "title": "Sector and services (Complete)",
+    "section": "",
+    "text": "These data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
+    "title": "Sector and services (Complete)",
+    "section": "Critique",
+    "text": "Critique\nWhat is misleading about this graph?\nThe graph is misleading because the segments are not to scale (e.g., making it seem like the difference between public, private, and don’t know are closer than the data shows)."
+  },
+  {
+    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
+    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
+    "title": "Sector and services (Complete)",
+    "section": "Recreate and improve",
+    "text": "Recreate and improve\n\nConfirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\nsurvation_longer &lt;- survation |&gt;\n  pivot_longer(\n    cols = -ID,\n    names_to = \"service\",\n    values_to = \"sector\"\n  )\n\nsurvation_longer |&gt;\n  count(service, sector) |&gt;\n  group_by(service) |&gt;\n  mutate(prop = round(n / sum(n), 2))\n\n# A tibble: 12 × 4\n# Groups:   service [4]\n   service    sector             n  prop\n   &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 Energy     Don't know       130  0.07\n 2 Energy     Private sector   112  0.06\n 3 Energy     Public sector   1616  0.87\n 4 Rail       Don't know        56  0.03\n 5 Rail       Private sector    56  0.03\n 6 Rail       Public sector   1746  0.94\n 7 Royal Mail Don't know       149  0.08\n 8 Royal Mail Private sector   130  0.07\n 9 Royal Mail Public sector   1579  0.85\n10 Water      Don't know        56  0.03\n11 Water      Private sector    56  0.03\n12 Water      Public sector   1746  0.94\n\n\n\nCreate an improved version of the visualization. Your improved visualization:\nshould also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (gray, #FF3205, and #006697) and appear in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\ndoes not need to show percentages in the segments\n\n\nsurvation_longer |&gt;\n  mutate(\n    service = fct_relevel(\n      service, \"Royal Mail\", \"Energy\", \"Water\", \"Rail\"\n    ),\n    sector = fct_rev(\n      fct_relevel(sector, \"Public sector\", \"Private sector\", \"Don't know\"))\n    ) |&gt;\n  ggplot(aes(y = service, fill = sector)) +\n  geom_bar() +\n  scale_fill_manual(values = c(\"gray\", \"#FF3205\", \"#006697\")) +\n  guides(fill = guide_legend(reverse = TRUE)) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(\n    x = NULL,\n    y = NULL,\n    fill = NULL,\n    title = \"Do you think the following services should be\\nrun in the private sector or the public sector?\",\n    caption = \"Base: All Respondents Unweighted Total: Total=1858\"\n  )\n\n\n\n\n\n\n\n\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nYes, the improved visualization sends a much different message. Now, at first glance, it is more obvious that, regardless of service, most individuals voted that they should be handled in the public sector instead of the private or don’t know. Before, the differences within sector were less obvious due to poor scaling."
   },
   {
     "objectID": "code-alongs/1-2-sector-services/1-2-sector-services.html",
@@ -322,46 +385,32 @@
     "text": "Recreate and improve\n\nConfirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\n# add code here\n\n\nCreate an improved version of the visualization. Your improved visualization:\nshould also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (gray, #FF3205, and #006697) and appear in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\ndoes not need to show percentages in the segments\n\n\n# add code here\n\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nAdd response here."
   },
   {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html",
-    "title": "Sector and services (Complete)",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": " Data science ethics",
     "section": "",
-    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them.\n\n\n\n\n\n\n\n\nWe will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)\n\n\n\n\nThese data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
+    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#goal",
-    "title": "Sector and services (Complete)",
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": " Data science ethics",
     "section": "",
-    "text": "The following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\nOur ultimate goal in this code along is to identify aspects of misrepresentation in this plot and then to correct them."
+    "text": "Title\n\n\n\n\n\n\nWelcome\n\n\n\n\nMisrepresentation\n\n\n\n\nData privacy\n\n\n\n\nAlgorithmic bias\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#packages",
-    "title": "Sector and services (Complete)",
-    "section": "",
-    "text": "We will use the tidyverse package for data wrangling and visualization.\n\nlibrary(tidyverse)"
+    "objectID": "index.html#code-alongs",
+    "href": "index.html#code-alongs",
+    "title": " Data science ethics",
+    "section": "Code alongs",
+    "text": "Code alongs\n\n\n\n\n\nTitle\n\n\n\n\n\n\nSector and services (Complete)\n\n\n\n\nSector and services\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#data",
-    "title": "Sector and services (Complete)",
-    "section": "",
-    "text": "These data come from Survation and were recreated from the percentages noted on the segmented bar chart above.\n\nsurvation &lt;- read_csv(\"https://data-science-with-r.github.io/data/survation.csv\")\n\nLet’s take a look at the data.\n\nsurvation\n\n# A tibble: 1,858 × 5\n      ID `Royal Mail`  Energy        Water         Rail         \n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        \n 1  1308 Public sector Public sector Public sector Public sector\n 2  1018 Public sector Public sector Public sector Public sector\n 3  1125 Public sector Public sector Public sector Public sector\n 4  1004 Public sector Public sector Public sector Public sector\n 5   623 Public sector Public sector Public sector Public sector\n 6   905 Public sector Public sector Public sector Public sector\n 7   645 Public sector Public sector Public sector Public sector\n 8   934 Public sector Public sector Public sector Public sector\n 9   400 Public sector Public sector Public sector Public sector\n10   900 Public sector Public sector Public sector Public sector\n# ℹ 1,848 more rows"
-  },
-  {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#critique",
-    "title": "Sector and services (Complete)",
-    "section": "Critique",
-    "text": "Critique\nWhat is misleading about this graph?\nThe graph is misleading because the segments are not to scale (e.g., making it seem like the difference between public, private, and don’t know are closer than the data shows)."
-  },
-  {
-    "objectID": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
-    "href": "code-alongs/1-2-sector-services/1-2-sector-services-complete.html#recreate-and-improve",
-    "title": "Sector and services (Complete)",
-    "section": "Recreate and improve",
-    "text": "Recreate and improve\n\nConfirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.\n\n\nsurvation_longer &lt;- survation |&gt;\n  pivot_longer(\n    cols = -ID,\n    names_to = \"service\",\n    values_to = \"sector\"\n  )\n\nsurvation_longer |&gt;\n  count(service, sector) |&gt;\n  group_by(service) |&gt;\n  mutate(prop = round(n / sum(n), 2))\n\n# A tibble: 12 × 4\n# Groups:   service [4]\n   service    sector             n  prop\n   &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 Energy     Don't know       130  0.07\n 2 Energy     Private sector   112  0.06\n 3 Energy     Public sector   1616  0.87\n 4 Rail       Don't know        56  0.03\n 5 Rail       Private sector    56  0.03\n 6 Rail       Public sector   1746  0.94\n 7 Royal Mail Don't know       149  0.08\n 8 Royal Mail Private sector   130  0.07\n 9 Royal Mail Public sector   1579  0.85\n10 Water      Don't know        56  0.03\n11 Water      Private sector    56  0.03\n12 Water      Public sector   1746  0.94\n\n\n\nCreate an improved version of the visualization. Your improved visualization:\nshould also be a segmented bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (gray, #FF3205, and #006697) and appear in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\ndoes not need to show percentages in the segments\n\n\nsurvation_longer |&gt;\n  mutate(\n    service = fct_relevel(\n      service, \"Royal Mail\", \"Energy\", \"Water\", \"Rail\"\n    ),\n    sector = fct_rev(\n      fct_relevel(sector, \"Public sector\", \"Private sector\", \"Don't know\"))\n    ) |&gt;\n  ggplot(aes(y = service, fill = sector)) +\n  geom_bar() +\n  scale_fill_manual(values = c(\"gray\", \"#FF3205\", \"#006697\")) +\n  guides(fill = guide_legend(reverse = TRUE)) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(\n    x = NULL,\n    y = NULL,\n    fill = NULL,\n    title = \"Do you think the following services should be\\nrun in the private sector or the public sector?\",\n    caption = \"Base: All Respondents Unweighted Total: Total=1858\"\n  )\n\n\n\n\n\n\n\n\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\nYes, the improved visualization sends a much different message. Now, at first glance, it is more obvious that, regardless of service, most individuals voted that they should be handled in the public sector instead of the private or don’t know. Before, the differences within sector were less obvious due to poor scaling."
+    "objectID": "index.html#exercises",
+    "href": "index.html#exercises",
+    "title": " Data science ethics",
+    "section": "Exercises",
+    "text": "Exercises\n\n\n\n\n\nTitle\n\n\n\n\n\n\nMisleading Data Visualizations\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides/1-1-welcome/1-1-welcome.html#transform---visualize",
