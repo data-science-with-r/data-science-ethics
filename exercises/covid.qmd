@@ -1,5 +1,6 @@
 ---
 title: Misleading Data Visualizations
+subtitle: "{{< fa book-open >}} Data visualization and transformation<br>{{< fa book >}} Data Science with R"
 format: live-html
 engine: knitr
 bibliography: reference.bib
@@ -15,20 +16,24 @@ webr:
     - https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/georgia_covid.csv
 ---
 
+## Getting Started
+
 Programming exercises are designed to provide an opportunity for you to put what you learn in the videos and readings. These exercises feature interactive code chunks using a tool called [WebR](https://docs.r-wasm.org/webr/latest), which allow you to write, edit, and run R code without leaving your browser.
 
-When the ▶️ Run Code button turns to a solid color, you can interact with the code chunks!
+When the ▶️ Run Code button turns to a solid color (with no flashing loading bubble), you can interact with the code chunks!
 
 We invite you to think critically about the ethics questions associated with each graph before opening the solution box so you get the most out of this exercise.
 
 ## Packages
+
+We’ll use: tidyverse and scales to create plots in this exercise. These are ready for you to use in this programming exercise!
 
 ```{r}
 #| label: load-packages
 #| message: false
 #| warning: false
 library(tidyverse)
-library(ggridges)
+library(scales)
 ```
 
 <!-- begin: webr fodder -->
@@ -76,28 +81,45 @@ kansas_covid <- read_csv("kansas_covid.csv")
 kansas_covid
 ```
 
-![](exercises/images/masks-v-nomasks.png)
+![](images/masks-v-nomasks.png)
 
+
+::: exercise
 What is misleading about this graph? Why might it be misleading?
 
+
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 There are two different y-axes. One on the left for the counties with the mask mandate, and one on the right for the counties without a mask mandate. This may be misleading, as someone may not see the additional y-axis on the right side of the graph; line graphs typically do not have two different y-axes.
+
+:::
 :::
 
+:::
+
+::: exercise
 What trend in these data might someone conclude because of the misleading visualization?
 
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 Based on the misleading visualization, one could come to the conclusion that, the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased to a lower value for masked counties than for counties that did not have the mask mandate
+:::
+:::
+
 :::
 
 ## Fixing the graph
 
-Now that we have identified how this graph is misleading, let's create our own graph that fixes the issue! The first thing we need to do is think about the structure of our data. As seen above, our three column names are `date`, `mask mandate`, and `no-mask mandate`. How do the structure of these data need to change in order for us to plot these data?
+Now that we have identified how this graph is misleading, let's create our own graph that fixes the issue! The first thing we need to do is think about the structure of our data. As seen above, our three column names are `date`, `mask mandate`, and `no-mask mandate`. 
 
+::: exercise
+How do the structure of these data need to change in order for us to plot these data?
+
+::: {}
 ::: {.callout-tip collapse="true"}
 ## Solution
 
@@ -108,10 +130,17 @@ kansas_covid |>
   pivot_longer(!date, names_to = "County" , values_to = "cases") 
 ```
 :::
+:::
+
+:::
 
 Now that our data is in the correct format (note that we also changed our `date` variable to be in the format of month, day, year), we are going to use `ggplot()`, and the appropriate geom function to make our new graph. Please see the [Function Reference](https://ggplot2.tidyverse.org/reference/) for the different types of `geoms` we can use. Add the appropriate geom to the plot below to make a line graph.
 
+::: exercise
+
 ```{webr}
+#| exercise: ex_1
+
 kansas_covid |>
   pivot_longer(!date, names_to = "County" , values_to = "cases") |>
   mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
@@ -121,6 +150,7 @@ kansas_covid |>
   # add code here
 ```
 
+::: {.solution exercise="ex_1"}
 ::: {.callout-tip collapse="true"}
 ## Solution
 
@@ -136,16 +166,24 @@ kansas_covid |>
   geom_line()
 ```
 :::
+:::
 
+:::
+
+::: exercise
 Using our new graph, what proper conclusion can we make?
 
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 Based on our new graph, we can see the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased for the mask mandated counties, and stayed relatively consistent for the non-masked mandated counties. We can also see that within this date range, the non-mask mandated counties had a lower rolling average per/100k than masked mandated counties.
 :::
+:::
 
-We can add the following lines of code to make the graph even more effective. We are using `scale_color_manual()` to change the colors of the line associated with the County variable; `scale_x_date()`to add date labels to the x-axis; `theme()`to change the angle of the x-axis and the position of the legend; and `labs()` to add a title!
+:::
+
+We can add the following lines of code to make the graph even more effective. We are using `scale_color_manual()` to change the colors of the line associated with the County variable; `scale_x_date()`to add date labels to the x-axis; `theme()`to change the angle of the x-axis and the position of the legend; and `labs()` to add a title! We also have given a subset of dates, and removed having an angled x-axis to improve readability for the user. 
 
 ```{webr}
 kansas_covid |>
@@ -157,9 +195,7 @@ kansas_covid |>
   geom_line() +
   scale_color_manual(values = c("mask mandate" = "#E69F00",
                                 "no-mask mandate" = "#0072B2")) +
-  scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "1 day") + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1),
-        legend.position = "bottom") + 
+  scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "5 day") + 
   labs(title = "Kansas Covid-19 7 day rolling averages per/100k")
 ```
 
@@ -187,18 +223,21 @@ georgia_covid <- read_csv("georgia_covid.csv")
 georgia_covid
 ```
 
-![](exercises/images/georgia_covid.png)
+![](images/georgia_covid.png)
 
+::: exercise
 What is misleading about this graph? Why might it be misleading?
 
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 The dates on the x-axis are not in chronological order. This is extremely misleading, and a general audience is going to assume a correct chronological order to the dates from left to right. Further, the order of the counties within date are sorted from highest to lowest, making cross date comparison more difficult for each county. One strategy we can use in R is to manually set the dates in chronological order using the `levels` argument in the `factor()` function when manipulating the `date` variable in our data set using `mutate()`.
 
+
 ```{r}
 georgia_covid |>
-  filter(date >= "2020-04-26", date <= "2020-05-09") %>%
+  filter(date >= "2020-04-26", date <= "2020-05-09") |>
   mutate(
     date = format(date, "%d%b%Y"), 
     date = factor(date,
@@ -211,65 +250,84 @@ georgia_covid |>
 
 Dates on our plot will appear in the order we set!
 :::
+:::
+
+:::
+
+
+::: exercise
 
 What trend in these data might someone conclude because of the misleading visualization?
 
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 Based on the misleading visualization, one could come to the conclusion that the trend of Covid-19 cases across these five counties are significantly decreasing each day.
+:::
+:::
+
 :::
 
 ## Fixing the graph
 
 We can use the following code to help make their plot less misleading. We will not sort the levels of county within each date to be in descending order, to make comparisons easier. The function `geom_col()` is used to re-create the barplot. The functions `theme()`, `scale_x_discrete()`, and `scale_fill_manual()` are used to help recreate some of the visual features of the plot above.
 
-```{webr}
+```{r}
 georgia_covid |>
-  filter(date >= "2020-04-26", date <= "2020-05-09") %>%
+  filter(date >= "2020-04-26", date <= "2020-05-09") |>
   mutate(
     date = format(date, "%d%b%Y"), 
-    date = factor(date,
-                  levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
-                             "29Apr2020", "30Apr2020", "01May2020", 
-                             "02May2020", "03May2020", "04May2020",
-                             "05May2020", "06May2020", "07May2020", 
-                             "08May2020", "09May2020"))) %>%
+    date = factor(
+      date,
+      levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
+                 "29Apr2020", "30Apr2020", "01May2020", 
+                 "02May2020", "03May2020", "04May2020",
+                 "05May2020", "06May2020", "07May2020", 
+                 "08May2020", "09May2020"))) |>
   ggplot(aes(x = date, y = case, group = county, fill = county)) +
   geom_col(position = position_dodge(), width=.8) + 
   scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
-  scale_fill_manual("County",
-                    values = c("#5854A8", "#46868E", "#958648", 
-                               "#8F5D37", "#5D98DB"),
-                    guide = guide_legend(title.position = "top",
-                                         title.hjust = 0.5)) + 
-  ggtitle(
-    "Top 5 Counties with the Greatest Number of Confirmed COVID-19 Cases",
-    subtitle = "The chart below represents the most impacted counties over the past 15 days and the number of cases over time.") +
+  scale_fill_manual(
+    "County",
+     values = c("#5854A8", "#46868E", "#958648", "#8F5D37", "#5D98DB"),
+     guide = guide_legend(title.position = "top", title.hjust = 0.5)) + 
+  labs(
+    title = "Top 5 Counties with the Greatest Number of Confirmed COVID-19 Cases",
+    subtitle = "The chart below represents the most impacted counties over the 
+    past 15 days and the number of cases over time." ) +
   theme_classic() +
-  theme(legend.position = "top", 
-        panel.background = element_rect(fill = "#182F4E"),
-        plot.background = element_rect(fill = "#182F4E"),
-        axis.line = element_line(color = "white"),
-        axis.text = element_text(color = "white"),
-        axis.title = element_text(color = "white"),
-        legend.background = element_rect(fill = "#182F4E"),
-        legend.text = element_text(color = "white"),
-        legend.title = element_text(color = "white"),
-        title = element_text(color = "white"))
- 
+  theme(
+    legend.position = "top", 
+    panel.background = element_rect(fill = "#182F4E"),
+    plot.background = element_rect(fill = "#182F4E"),
+    axis.line = element_line(color = "white"),
+    axis.text = element_text(color = "white"),
+    axis.title = element_text(color = "white"),
+    legend.background = element_rect(fill = "#182F4E"),
+    legend.text = element_text(color = "white"),
+    legend.title = element_text(color = "white"),
+    title = element_text(color = "white"))
 ```
 
+
+::: exercise 
 Using our new graph, what proper conclusion can we make about the trend of casses across the five counties?
 
+::: {}
 ::: {.callout-tip collapse="true"}
-## Solution
+## Discussion
 
 Based on the less misleading graph, we can see that the overall trend of cases across the five counties may have gone down, but the rate in which they went down depends on the county. Further, some counties (ex. Hall) show a more cyclic pattern than an overall downward trend.
 :::
+:::
 
+:::
+
+::: exercise
 What are some of your overall takeaways after working with these two misleading graphs?
 
+::: {}
 ::: {.callout-tip collapse="true"}
 ## Takeaways
 
@@ -278,4 +336,7 @@ What are some of your overall takeaways after working with these two misleading 
 -- Data cane be manipulated based on their axes. If you are creating / consuming graphed information, it's important to be cognizant of the scale and order in which information on the axes are in.
 
 -- Plotting data in a unfamiliar way (ex. having two y-axes) can be misleading, instead of a helpful comparison tool. As a researcher, think critically about how your audience is going scan your visualization.
+:::
+:::
+
 :::

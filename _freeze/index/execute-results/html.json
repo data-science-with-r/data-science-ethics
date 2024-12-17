@@ -1,0 +1,15 @@
+{
+  "hash": "0d8edc4fc33bfac43af6b3abfc9fe636",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"{{< fa book-open >}} Data science ethics\"\nsubtitle: \"{{< fa book >}} Data Science with R\"\nauthor: \"Mine Çetinkaya-Rundel + Elijah Meyer\"\nlisting:\n  - id: slides\n    contents: slides/*/*.qmd\n    type: table\n    fields: [title]\n    filter-ui: false\n    sort-ui: false\n    sort: [filename]\n  - id: code-alongs\n    contents: code-alongs/*/*.qmd\n    type: table\n    fields: [title]\n    filter-ui: false\n    sort-ui: false\n    sort: [filename]\n  - id: exercises\n    contents: exercises/*.qmd\n    type: table\n    fields: [title]\n    sort: [order]\n    filter-ui: false\n    sort-ui: false\n---\n\n\n\n\n\n## Slides\n\n::: {#slides}\n:::\n\n## Code alongs\n\n::: {#code-alongs}\n:::\n\n## Exercises\n\n::: {#exercises}\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
