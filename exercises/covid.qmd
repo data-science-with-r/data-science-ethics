@@ -1,6 +1,6 @@
 ---
 title: Misleading Data Visualizations
-subtitle: "{{< fa book-open >}} Data visualization and transformation<br>{{< fa book >}} Data Science with R"
+subtitle: "{{< fa book-open >}} Data science ethics <br>{{< fa book >}} Data Science with R"
 format: live-html
 engine: knitr
 bibliography: reference.bib
