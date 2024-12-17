@@ -193,8 +193,8 @@ kansas_covid |>
     aes(x = date , y = cases , color = County)
   ) +
   geom_line() +
-  scale_color_manual(values = c("mask mandate" = "#E69F00",
-                                "no-mask mandate" = "#0072B2")) +
+  scale_color_manual(
+    values = c("mask mandate" = "#E69F00", "no-mask mandate" = "#0072B2")) +
   scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "5 day") + 
   labs(title = "Kansas Covid-19 7 day rolling averages per/100k")
 ```
@@ -240,12 +240,13 @@ georgia_covid |>
   filter(date >= "2020-04-26", date <= "2020-05-09") |>
   mutate(
     date = format(date, "%d%b%Y"), 
-    date = factor(date,
-                  levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
-                             "29Apr2020", "30Apr2020", "01May2020", 
-                             "02May2020", "03May2020", "04May2020",
-                             "05May2020", "06May2020", "07May2020", 
-                             "08May2020", "09May2020")))
+    date = factor(
+      date,
+      levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
+                 "29Apr2020", "30Apr2020", "01May2020", 
+                 "02May2020", "03May2020", "04May2020",
+                 "05May2020", "06May2020", "07May2020", 
+                 "08May2020", "09May2020")))
 ```
 
 Dates on our plot will appear in the order we set!
