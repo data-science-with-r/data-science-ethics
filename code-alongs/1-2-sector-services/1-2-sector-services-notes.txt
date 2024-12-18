@@ -1,0 +1,36 @@
+# calculate-percentages
+survation_longer <- survation |>
+  pivot_longer(
+    cols = -ID,
+    names_to = "service",
+    values_to = "sector"
+  )
+
+survation_longer |>
+  count(service, sector) |>
+  group_by(service) |>
+  mutate(prop = round(n / sum(n), 2))
+```
+
+# recreate
+survation_longer |>
+  mutate(
+    service = fct_relevel(
+      service, "Royal Mail", "Energy", "Water", "Rail"
+    ),
+    sector = fct_rev(
+      fct_relevel(sector, "Public sector", "Private sector", "Don't know"))
+    ) |>
+  ggplot(aes(y = service, fill = sector)) +
+  geom_bar() +
+  scale_fill_manual(values = c("gray", "#FF3205", "#006697")) +
+  guides(fill = guide_legend(reverse = TRUE)) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = NULL,
+    title = "Do you think the following services should be\nrun in the private sector or the public sector?",
+    caption = "Base: All Respondents Unweighted Total: Total=1858"
+  )
