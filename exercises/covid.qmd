@@ -1,5 +1,5 @@
 ---
-title: Misleading Data Visualizations
+title: Misleading data visualizations
 subtitle: "{{< fa book-open >}} Data science ethics <br>{{< fa book >}} Data Science with R"
 format: live-html
 engine: knitr
@@ -12,8 +12,8 @@ webr:
   cell-options:
     autorun: false
   resources:
-    - https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/kansas_covid.csv
-    - https://raw.githubusercontent.com/ElijahMeyer3/Coursera/main/data/georgia_covid.csv
+    - https://raw.githubusercontent.com/data-science-with-r/data-science-ethics/refs/heads/main/exercises/data/kansas-covid.csv
+    - https://raw.githubusercontent.com/data-science-with-r/data-science-ethics/refs/heads/main/exercises/data/georgia-covid.csv
 ---
 
 <!-- begin: webr fodder -->
@@ -25,239 +25,393 @@ webr:
 #| echo: false
 #| output: false
 options("readr.edition" = 1)
+kansas_covid <- read_csv("kansas-covid.csv")
+georgia_covid <- read_csv("georgia-covid.csv")
 ```
 
 <!-- end: webr fodder -->
 
-## Getting Started
+# Getting Started
 
 Programming exercises are designed to provide an opportunity for you to put what you learn in the videos and readings.
-These exercises feature interactive code chunks using a tool called [WebR](https://docs.r-wasm.org/webr/latest), which allow you to write, edit, and run R code without leaving your browser.
+These exercises feature interactive code cells which allow you to write, edit, and run R code without leaving your browser.
 
-When the ▶️ Run Code button turns to a solid color (with no flashing loading bubble), you can interact with the code chunks!
+When the ▶️ Run Code button turns to a solid color (with no flashing bubble indicating that the document is still loading), you can interact with the code cells!
 
 We invite you to think critically about the ethics questions associated with each graph before opening the solution box so you get the most out of this exercise.
 
 ## Packages
 
-We’ll use: tidyverse and scales to create plots in this exercise.
-These are ready for you to use in this programming exercise!
+We’ll use the **tidyverse** and **scales** packages to create and improve plots in this programming exercise.
+These are already installed for you to use in this programming exercise, run the following code cell to load these packages.
 
-```{r}
+```{webr}
 #| label: load-packages
-#| message: false
-#| warning: false
 library(tidyverse)
 library(scales)
 ```
-
-<!-- begin: webr fodder -->
-
-{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
-
-```{webr}
-#| edit: false
-#| echo: false
-#| output: false
-options("readr.edition" = 1)
-```
-
-<!-- end: webr fodder -->
 
 ## Motivation
 
 Data visualization is a powerful tool used to help a general audience synthesize complex data into a message that is understandable.
 However, data visualizations that are intentionally or unintentionally misleading can lead an audience to conclusions that are nothing more than fabrications of the truth.
 
-In this programming exercise, we are going to visit data from the Covid-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved.
+In this programming exercise, we are going to visit data from the COVID-19 pandemic, and work through two different data visualizations, identifying why they are misleading, and how they can be improved.
 
-```{r}
-#| label: r-data
-#| echo: false
-#| message: false
-kansas_covid <- read_csv("data/kansas_covid.csv")
-```
-
-```{webr}
-#| setup: true
-#| exercise: ex_1
-kansas_covid <- read_csv("kansas_covid.csv")
-```
-
-## Kansas Covid
+# COVID-19 in Kansas
 
 *"On August 6, 2020, Rachel Maddow of MSNBC tweeted “Chart: Kansas mask counties versus no-mask mandate counties” (Maddow 2020, August 6) along with a link to a plot (see figure below) created by the Kansas Department of Health and Environment—which was also shared live on The Rachel Maddow Show that same day. The plot compared the number of COVID-19 cases over time for counties in Kansas that had mask mandates versus those that did not"* [@engledowl2021]
 
-The data used to create the data visualization can be read in (to be used later), and seen below by running the following code.
-
-```{webr}
-#| label: load-data
-kansas_covid <- read_csv("kansas_covid.csv")
-
-kansas_covid
-```
-
 ![](images/masks-v-nomasks.png)
 
-::::: exercise
+:::: exercise
 What is misleading about this graph?
 Why might it be misleading?
 
-<div>
-
 ::: {.callout-tip collapse="true"}
-## Discussion
+## Suggested answer
 
 There are two different y-axes.
 One on the left for the counties with the mask mandate, and one on the right for the counties without a mask mandate.
 This may be misleading, as someone may not see the additional y-axis on the right side of the graph; line graphs typically do not have two different y-axes.
 :::
+::::
 
-</div>
-:::::
-
-::::: exercise
+:::: exercise
 What trend in these data might someone conclude because of the misleading visualization?
 
-<div>
-
 ::: {.callout-tip collapse="true"}
-## Discussion
+## Suggested answer
 
-Based on the misleading visualization, one could come to the conclusion that, the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased to a lower value for masked counties than for counties that did not have the mask mandate
-:::
-
-</div>
-:::::
-
-## Fixing the graph
-
-Now that we have identified how this graph is misleading, let's create our own graph that fixes the issue!
-The first thing we need to do is think about the structure of our data.
-As seen above, our three column names are `date`, `mask mandate`, and `no-mask mandate`.
-
-::::: exercise
-How do the structure of these data need to change in order for us to plot these data?
-
-<div>
-
-::: {.callout-tip collapse="true"}
-## Solution
-
-The values of mask mandate and no-mask mandate need to be levels of a categorical variable that we can map to the visual element (lines) on our plot.
-In the following code below, we name this variable `County`.
-
-```{r}
-kansas_covid |>
-  pivot_longer(!date, names_to = "County" , values_to = "cases") 
-```
-:::
-
-</div>
-:::::
-
-Now that our data is in the correct format (note that we also changed our `date` variable to be in the format of month, day, year), we are going to use `ggplot()`, and the appropriate geom function to make our new graph.
-Please see the [Function Reference](https://ggplot2.tidyverse.org/reference/) for the different types of `geoms` we can use.
-Add the appropriate geom to the plot below to make a line graph.
-
-::::: exercise
-```{webr}
-#| exercise: ex_1
-
-kansas_covid |>
-  pivot_longer(!date, names_to = "County" , values_to = "cases") |>
-  mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
-  ggplot(
-    aes(x = date , y = cases , color = County)
-  ) +
-  # add code here
-```
-
-:::: {.solution exercise="ex_1"}
-::: {.callout-tip collapse="true"}
-## Solution
-
-We can use `geom_line()` to create a line graph!
-
-```{r}
-kansas_covid |>
-  pivot_longer(!date, names_to = "County" , values_to = "cases") |>
-  mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
-  ggplot(
-    aes(x = date , y = cases , color = County)
-  ) +
-  geom_line()
-```
+Based on the misleading visualization, one could come to the conclusion that, the Kansas COVID-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased to a lower value for masked counties than for counties that did not have the mask mandate
 :::
 ::::
-:::::
 
-::::: exercise
-Using our new graph, what proper conclusion can we make?
+## Improving the visualization
 
-<div>
+Now that we have identified how this visualization is misleading, let's create our own visualization that addresses the issue!
 
-::: {.callout-tip collapse="true"}
-## Discussion
-
-Based on our new graph, we can see the Kansas Covid-19 7 day rolling averages per/100k between the dates of 7/12/2020 through 8/03/2020 decreased for the mask mandated counties, and stayed relatively consistent for the non-masked mandated counties.
-We can also see that within this date range, the non-mask mandated counties had a lower rolling average per/100k than masked mandated counties.
-:::
-
-</div>
-:::::
-
-We can add the following lines of code to make the graph even more effective.
-We are using `scale_color_manual()` to change the colors of the line associated with the County variable; `scale_x_date()`to add date labels to the x-axis; `theme()`to change the angle of the x-axis and the position of the legend; and `labs()` to add a title!
-We also have given a subset of dates, and removed having an angled x-axis to improve readability for the user.
+The data used to create the data visualization can be read in (to be used later) viewed by running the following code.
 
 ```{webr}
-kansas_covid |>
-  pivot_longer(!date, names_to = "County" , values_to = "cases") |>
-  mutate(date = as.Date(date, format = "%m/%d/%Y")) |>
-  ggplot(
-    aes(x = date , y = cases , color = County)
-  ) +
-  geom_line() +
-  scale_color_manual(
-    values = c("mask mandate" = "#E69F00", "no-mask mandate" = "#0072B2")) +
-  scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "5 day") + 
-  labs(title = "Kansas Covid-19 7 day rolling averages per/100k")
+#| label: load-kansas-data
+kansas_covid <- read_csv("kansas-covid.csv")
+
+kansas_covid
 ```
 
-## Georgia Covid
+First, we need to think about the structure of our data.
+As seen above, the three variables in the data are `date`, `mask mandate`, and `no-mask mandate`.
 
-Georgia DPH temporarily published the following graph on the COVID-19 Daily Status Report.
-The data and associated plot can be found below.
-These data are pulled from the NY Times.
+:::: exercise
+How do the structure of these data need to change in order for us to plot these data?
 
-```{r}
-#| label: r-data2
-#| echo: false
-#| message: false
-georgia_covid <- read_csv("data/georgia_covid.csv")
+::: {.callout-tip collapse="true"}
+## Solution
+
+The values of mask mandate and no-mask mandate need to be levels of a categorical variable that we can map to a visual element (lines) on our plot.
+:::
+::::
+
+Now let's do this!
+
+::: exercise
+Reshape the data so that it's longer with three columns: `date`, `mandate`, and `cases`.
+Save the resulting data frame as `kansas_covid_longer`.
+
+```{webr}
+#| exercise: ex_1
+kansas_covid_longer <- kansas_covid |>
+  # add code here
+
+kansas_covid_longer
 ```
+
+::: { .hint exercise="ex_1"}
+::: { .callout-note collapse="false"}
+## Hint 1
+
+Consider using the `pivot_longer()` function:
+
+```r
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = ___,
+    names_to = ___,
+    values_to = ___
+  )
+```
+:::
+:::
+
+::: { .hint exercise="ex_1"}
+::: { .callout-note collapse="false"}
+## Hint 2
+
+We want to pivot all columns but the `date` column:
+
+```r
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = !date,
+    names_to = ___,
+    values_to = ___
+  )
+```
+:::
+:::
+
+::: { .hint exercise="ex_1"}
+::: { .callout-note collapse="false"}
+## Hint 3
+
+The columns **names** should go **to** a column called `mandate`:
+
+```r
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = !date,
+    names_to = "mandate",
+    values_to = ___
+  )
+```
+:::
+:::
+
+::: { .solution exercise="ex_1" }
+::: { .callout-tip collapse="false"}
+## Solution
+
+The **values** should go **to** a column called `cases`:
+
+```r
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = !date,
+    names_to = "mandate",
+    values_to = "cases"
+  )
+
+kansas_covid_longer
+```
+
+:::
+:::
+
+:::
+
+Now that our data is in the correct shape, let's also address the data type of the `date` variable.
+
+::: exercise
+Transform the `date` column of the `kansas_covid_longer` data frame to be a variable that R recognizes as a date.
+Save the resulting data frame with the updated date variable as `kansas_covid_longer` again.
 
 ```{webr}
 #| setup: true
 #| exercise: ex_2
-georgia_covid <- read_csv("georgia_covid.csv")
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = !date,
+    names_to = "mandate",
+    values_to = "cases"
+  )
 ```
 
 ```{webr}
-#| label: load-data2
-georgia_covid <- read_csv("georgia_covid.csv")
+#| exercise: ex_2
+kansas_covid_longer <- kansas_covid_longer |>
+  # add code here
 
-georgia_covid
+kansas_covid_longer
 ```
 
-![](images/georgia_covid.png)
+::: { .hint exercise="ex_2"}
+::: { .callout-note collapse="false"}
+## Hint 1
+
+You can use the `mdy()` function from the **lubridate** package which is already loaded with **tidyverse**.
+:::
+:::
+
+::: { .hint exercise="ex_2"}
+::: { .callout-note collapse="false"}
+## Hint 2
+
+You're transforming a column, so use the `mutete()` function.
+
+:::
+:::
+
+::: { .hint exercise="ex_2"}
+::: { .callout-note collapse="false"}
+## Hint 3
+
+Putting the first two hints together:
+
+```r
+kansas_covid_longer <- kansas_covid |>
+  ___(date = ___(date))
+```
+:::
+:::
+
+::: { .solution exercise="ex_2" }
+::: { .callout-tip collapse="false"}
+## Solution
+
+```r
+kansas_covid_longer <- kansas_covid_longer |>
+  mutate(date = mdy(date))
+
+kansas_covid_longer
+```
+
+:::
+:::
+
+:::
+
+Our data frame is ready to be plotted!
+Next, we'll use `ggplot()`, and the appropriate geom function to make our new graph.
 
 ::::: exercise
+Recreate a slightly improved version of the original plot with `date` on the x-axis, `cases` on the y-axis, and data represented in lines colored by `mandate`.
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|   - ex_3
+#|   - ex_4
+kansas_covid_longer <- kansas_covid |>
+  pivot_longer(
+    cols = !date,
+    names_to = "mandate",
+    values_to = "cases"
+  ) |>
+  mutate(date = mdy(date))
+```
+
+```{webr}
+#| exercise: ex_3
+#| fig-asp: 0.5
+ggplot(
+  kansas_covid_longer,
+  aes(x = ___ , y = ___ , color = ___, group = ___)
+  ) +
+  ___
+```
+
+::: { .hint exercise="ex_3"}
+::: { .callout-note collapse="false"}
+## Hint 1
+
+Please see the [ggplot2 function reference](https://ggplot2.tidyverse.org/reference/) for help with determining the appropriate geom for making a line plot.
+:::
+:::
+
+::: { .hint exercise="ex_3"}
+::: { .callout-note collapse="false"}
+## Hint 2
+
+The appropriate geom is `geom_line()`:
+
+```r
+ggplot(
+  kansas_covid_longer,
+  aes(x = ___ , y = ___ , color = ___, group = ___)
+  ) +
+  geom_line()
+```
+
+:::
+:::
+
+::: { .solution exercise="ex_3" }
+::: { .callout-tip collapse="false"}
+## Solution
+
+Putting everything together together:
+
+```r
+ggplot(
+  kansas_covid_longer,
+  aes(x = date , y = cases , color = mandate, group = mandate)
+  ) +
+  geom_line()
+```
+:::
+:::
+
+
+:::::
+
+:::: exercise
+Using our new visualization, what proper conclusion can we make?
+
+::: {.callout-tip collapse="true"}
+## Discussion
+
+Based on our new graph, we can see the Kansas COVID-19 7 day rolling averages per/100k between the dates of July 12, 2020 through August 3, 2020 decreased for the mask mandated counties, and stayed relatively consistent for the non-masked mandated counties.
+We can also see that within this date range, the non-mask mandated counties had a lower rolling average per/100k than masked mandated counties.
+:::
+::::
+
+Next, let's improve the visualization further:
+
+- Use `scale_color_manual()` to change the colors of the lines associated with the `mandate` variable.
+- Use `scale_x_date()`to change the breaks and labels of the x-axis.
+- Use `labs()` to modify a axis labels and the label of the legend as well as add a  `title` and a `subtitle`.
+- Use `theme_bw()` to make the plot black-and-white themed.
+- Move the legend inside of the plot, 90% of the way on the x-axis and 80% of the way on the y-axis, and draw a gray rectangle around it.
+
+::: exercise
+Run the code below to generate the plot with the improvements described above.
+Then, modify various pieces of the code and re-run it to observe the effect and to help you understand what each function does.
+
+```{webr}
+#| exercise: ex_4
+#| fig-asp: 0.5
+ggplot(
+  kansas_covid_longer,
+  aes(x = date , y = cases , color = mandate)
+  ) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(
+    values = c(
+      "mask mandate" = "#E69F00", 
+      "no-mask mandate" = "#0072B2"
+    )
+  ) +
+  scale_x_date(
+    date_labels = "%b %d", 
+    date_breaks = "2 days"
+  ) + 
+  labs(
+    x = "Date",
+    y = "Number of cases",
+    color = "Mandate",
+    title = "Kansas COVID-19 7 day rolling averages per/100k",
+    subtitle = "July 12, 2020 through August 3, 2020"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "inside",
+    legend.position.inside = c(0.9, 0.8),
+    legend.background = element_rect(color = "gray")
+  )
+```
+
+:::
+
+# COVID-19 in Georgia
+
+Georgia Department of Public Health (DPH) temporarily published the following graph on the COVID-19 Daily Status Report.
+
+![](images/georgia-covid.png)
+
+:::: exercise
 What is misleading about this graph?
 Why might it be misleading?
-
-<div>
 
 ::: {.callout-tip collapse="true"}
 ## Discussion
@@ -265,90 +419,173 @@ Why might it be misleading?
 The dates on the x-axis are not in chronological order.
 This is extremely misleading, and a general audience is going to assume a correct chronological order to the dates from left to right.
 Further, the order of the counties within date are sorted from highest to lowest, making cross date comparison more difficult for each county.
-One strategy we can use in R is to manually set the dates in chronological order using the `levels` argument in the `factor()` function when manipulating the `date` variable in our data set using `mutate()`.
-
-```{r}
-georgia_covid |>
-  filter(date >= "2020-04-26", date <= "2020-05-09") |>
-  mutate(
-    date = format(date, "%d%b%Y"), 
-    date = factor(
-      date,
-      levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
-                 "29Apr2020", "30Apr2020", "01May2020", 
-                 "02May2020", "03May2020", "04May2020",
-                 "05May2020", "06May2020", "07May2020", 
-                 "08May2020", "09May2020")))
-```
-
-Dates on our plot will appear in the order we set!
 :::
+::::
 
-</div>
-:::::
-
-::::: exercise
+:::: exercise
 What trend in these data might someone conclude because of the misleading visualization?
-
-<div>
 
 ::: {.callout-tip collapse="true"}
 ## Discussion
 
-Based on the misleading visualization, one could come to the conclusion that the trend of Covid-19 cases across these five counties are significantly decreasing each day.
+Based on the misleading visualization, one could come to the conclusion that the trend of COVID-19 cases across these five counties are significantly decreasing each day.
+:::
+::::
+
+## Improving the visualization
+
+The data, gathered from the New York Times, that are used to create the data visualization can be read in (to be used later) viewed by running the following code.
+
+```{webr}
+#| label: load-georgia-data
+#| echo: false
+#| message: false
+georgia_covid <- read_csv("data/georgia-covid.csv")
+
+georgia_covid
+```
+
+::: exercise
+Use the `georgia_covid` data frame above to recreate the visualization with the correct order on the x-axis and same order of counties for each date.
+Note that you will need to first `filter()` the data for dates between `2020-04-26` and `2020-05-09`.
+
+````{webr}
+#| exercise: ex_5
+#| fig-asp: 0.5
+georgia_covid |>
+  filter(___) |>
+  ggplot(aes(___)) +
+  ___
+```
+
+::: { .hint exercise="ex_5"}
+::: { .callout-note collapse="false"}
+## Hint 1
+
+To `filter()` the data for the desired date range, use the following:
+
+```r
+georgia_covid |>
+  filter(date >= "2020-04-26" & date <= "2020-05-09")
+```
+:::
 :::
 
-</div>
-:::::
+::: { .hint exercise="ex_5"}
+::: { .callout-note collapse="false"}
+## Hint 2
 
-## Fixing the graph
+Use the following aesthetic mappings:
 
-We can use the following code to help make their plot less misleading.
-We will not sort the levels of county within each date to be in descending order, to make comparisons easier.
-The function `geom_col()` is used to re-create the barplot.
-The functions `theme()`, `scale_x_discrete()`, and `scale_fill_manual()` are used to help recreate some of the visual features of the plot above.
+- `x = date`
+- `y = case`
+- `group = county`
+- `fill = county`
+:::
+:::
 
-```{r}
+::: { .hint exercise="ex_5"}
+::: { .callout-note collapse="false"}
+## Hint 3
+
+Use `geom_col()` to plot the data.
+:::
+:::
+
+::: { .hint exercise="ex_5"}
+::: { .callout-note collapse="false"}
+## Hint 4
+
+Put the previous hints altogether:
+
+```r
 georgia_covid |>
-  filter(date >= "2020-04-26", date <= "2020-05-09") |>
-  mutate(
-    date = format(date, "%d%b%Y"), 
-    date = factor(
-      date,
-      levels = c("26Apr2020", "27Apr2020", "28Apr2020", 
-                 "29Apr2020", "30Apr2020", "01May2020", 
-                 "02May2020", "03May2020", "04May2020",
-                 "05May2020", "06May2020", "07May2020", 
-                 "08May2020", "09May2020"))) |>
+  filter(date >= "2020-04-26" & date <= "2020-05-09") |>
   ggplot(aes(x = date, y = case, group = county, fill = county)) +
-  geom_col(position = position_dodge(), width=.8) + 
-  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  geom_col()
+```
+:::
+:::
+
+::: { .solution exercise="ex_5" }
+::: { .callout-tip collapse="false"}
+## Solution
+
+Finally, dodge the bars:
+
+```r
+georgia_covid |>
+  filter(date >= "2020-04-26" & date <= "2020-05-09") |>
+  ggplot(aes(x = date, y = case, group = county, fill = county)) +
+  geom_col(position = position_dodge())
+```
+:::
+:::
+
+:::
+
+
+Next, let's improve the visualization further:
+
+- Make the bars skinnier by adding a `width` argument with a value less than 1 to `geom_col()`.
+- Use `scale_x_date()`to change the breaks and labels of the x-axis.
+- Use `scale_fill_manual()` to match the colors in the original plot.
+- Use `labs()` to modify a axis labels and the label of the legend as well as add a  `title` and a `subtitle`.
+- Use `theme_classic()` to remove the gridlines.
+- Modify a bunch of `theme()` elements to match the colors and other features of the original plot.
+
+::: exercise
+Run the code below to generate the plot with the improvements described above.
+Then, modify various pieces of the code and re-run it to observe the effect and to help you understand what each function does.
+
+```{webr}
+#| exercise: ex_6
+#| fig-asp: 0.5
+georgia_covid |>
+  filter(date >= "2020-04-26" & date <= "2020-05-09") |>
+  ggplot(aes(x = date, y = case, group = county, fill = county)) +
+  geom_col(position = position_dodge(), width = 0.8) +
+  scale_x_date(
+    date_labels = "%b %d",
+    date_breaks = "1 day",
+    guide = guide_axis(n.dodge = 2)
+  ) +
   scale_fill_manual(
-    "County",
-     values = c("#5854A8", "#46868E", "#958648", "#8F5D37", "#5D98DB"),
-     guide = guide_legend(title.position = "top", title.hjust = 0.5)) + 
+    values = c(
+      "Cobb" = "#5854A8",
+      "DeKalb" = "#46868E",
+      "Fulton" = "#958648",
+      "Gwinnett" = "#8F5D37",
+      "Hall" = "#5D98DB"
+    )
+  ) +
   labs(
+    x = "Date",
+    y = "Number of cases",
+    fill = "County",
     title = "Top 5 Counties with the Greatest Number of Confirmed COVID-19 Cases",
-    subtitle = "The chart below represents the most impacted counties over the 
-    past 15 days and the number of cases over time." ) +
+    subtitle = "The chart below represents the most impacted counties over the\npast 15 days and the number of cases over time."
+  ) +
   theme_classic() +
   theme(
-    legend.position = "top", 
     panel.background = element_rect(fill = "#182F4E"),
     plot.background = element_rect(fill = "#182F4E"),
     axis.line = element_line(color = "white"),
     axis.text = element_text(color = "white"),
     axis.title = element_text(color = "white"),
     legend.background = element_rect(fill = "#182F4E"),
+    legend.position = "top",
     legend.text = element_text(color = "white"),
-    legend.title = element_text(color = "white"),
-    title = element_text(color = "white"))
+    legend.title = element_text(color = "white", hjust = 0.5),
+    legend.title.position = "top",
+    title = element_text(color = "white")
+  )
 ```
 
-::::: exercise
-Using our new graph, what proper conclusion can we make about the trend of casses across the five counties?
+:::
 
-<div>
+:::: exercise
+Using our new graph, what proper conclusion can we make about the trend of casses across the five counties?
 
 ::: {.callout-tip collapse="true"}
 ## Discussion
@@ -356,27 +593,21 @@ Using our new graph, what proper conclusion can we make about the trend of casse
 Based on the less misleading graph, we can see that the overall trend of cases across the five counties may have gone down, but the rate in which they went down depends on the county.
 Further, some counties (ex. Hall) show a more cyclic pattern than an overall downward trend.
 :::
+::::
 
-</div>
-:::::
-
-::::: exercise
+:::: exercise
 What are some of your overall takeaways after working with these two misleading graphs?
-
-<div>
 
 ::: {.callout-tip collapse="true"}
 ## Takeaways
 
--- We digest information from graphs very quickly.
-If data are misrepresented, it may not be initially obvious, leading to some making incorrect conclusions.
+-   We digest information from graphs very quickly.
+    If data are misrepresented, it may not be initially obvious, leading to some making incorrect conclusions.
 
--- Data cane be manipulated based on their axes.
-If you are creating / consuming graphed information, it's important to be cognizant of the scale and order in which information on the axes are in.
+-   Data cane be manipulated based on their axes.
+    If you are creating / consuming graphed information, it's important to be cognizant of the scale and order in which information on the axes are in.
 
--- Plotting data in a unfamiliar way (ex. having two y-axes) can be misleading, instead of a helpful comparison tool.
-As a researcher, think critically about how your audience is going scan your visualization.
+-   Plotting data in a unfamiliar way (ex. having two y-axes) can be misleading, instead of a helpful comparison tool.
+    As a researcher, think critically about how your audience is going scan your visualization.
 :::
-
-</div>
-:::::
+::::
