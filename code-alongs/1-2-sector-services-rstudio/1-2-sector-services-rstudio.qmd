@@ -1,5 +1,6 @@
 ---
-title: "Sector and services (Complete)"
+title: "Sector and services"
+description: RStudio
 ---
 
 # Introduction
@@ -28,7 +29,9 @@ These data come from [Survation](https://www.survation.com/) and were recreated 
 ```{r}
 #| label: load-population-data
 #| message: false
-survation <- read_csv("https://data-science-with-r.github.io/data/survation.csv")
+survation <- read_csv(
+  "https://data-science-with-r.github.io/data/survation.csv"
+)
 ```
 
 Let's take a look at the data.
@@ -44,7 +47,7 @@ survation
 
 What is misleading about this graph?
 
-The graph is misleading because the segments are not to scale (e.g., making it seem like the difference between public, private, and don't know are closer than the data shows).
+Add response here.
 
 ## Recreate and improve
 
@@ -52,17 +55,7 @@ The graph is misleading because the segments are not to scale (e.g., making it s
 
 ```{r}
 #| label: calculate-percentages
-survation_longer <- survation |>
-  pivot_longer(
-    cols = -ID,
-    names_to = "service",
-    values_to = "sector"
-  )
-
-survation_longer |>
-  count(service, sector) |>
-  group_by(service) |>
-  mutate(prop = round(n / sum(n), 2))
+# add code here
 ```
 
 -   Create an improved version of the visualization. Your improved visualization:
@@ -79,29 +72,9 @@ survation_longer |>
 
 ```{r}
 #| label: recreate
-survation_longer |>
-  mutate(
-    service = fct_relevel(
-      service, "Royal Mail", "Energy", "Water", "Rail"
-    ),
-    sector = fct_rev(
-      fct_relevel(sector, "Public sector", "Private sector", "Don't know"))
-    ) |>
-  ggplot(aes(y = service, fill = sector)) +
-  geom_bar() +
-  scale_fill_manual(values = c("gray", "#FF3205", "#006697")) +
-  guides(fill = guide_legend(reverse = TRUE)) +
-  theme_minimal() +
-  theme(legend.position = "bottom") +
-  labs(
-    x = NULL,
-    y = NULL,
-    fill = NULL,
-    title = "Do you think the following services should be\nrun in the private sector or the public sector?",
-    caption = "Base: All Respondents Unweighted Total: Total=1858"
-  )
+# add code here
 ```
 
 -   How does the improved visualization look different than the original? Does it send a different message at a first glance?
 
-Yes, the improved visualization sends a much different message. Now, at first glance, it is more obvious that, regardless of service, most individuals voted that they should be handled in the public sector instead of the private or don't know. Before, the differences within sector were less obvious due to poor scaling.
+Add response here.

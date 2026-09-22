@@ -1,5 +1,6 @@
 ---
 title: "Sector and services"
+description: RStudio
 ---
 
 # Introduction
@@ -28,7 +29,9 @@ These data come from [Survation](https://www.survation.com/) and were recreated 
 ```{r}
 #| label: load-population-data
 #| message: false
-survation <- read_csv("https://data-science-with-r.github.io/data/survation.csv")
+survation <- read_csv(
+  "https://data-science-with-r.github.io/data/survation.csv"
+)
 ```
 
 Let's take a look at the data.

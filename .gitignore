@@ -6,3 +6,5 @@
 /.quarto/
 _site
 *.mov
+
+**/*.quarto_ipynb
